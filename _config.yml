@@ -11,3 +11,6 @@ github_username:  kaushikgopal
 
 # Build settings
 markdown: kramdown
+
+gems:
+  - octopress-linkblog
