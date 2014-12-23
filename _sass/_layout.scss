@@ -13,11 +13,6 @@
     &:hover { text-decoration: none; }
 }
 
-.site-nav, .page-content {
-    float: left;
-    display:table-cell;
-    margin: $spacing-unit 0;
-}
 
 .site-nav {
     @include micro-header;
@@ -161,13 +156,25 @@
 }
 
 
-
 /**
  * Page content
  */
 /* .page-heading {
     font-size: 20px;
 } */
+.site-nav, .page-content-wrapper {
+    float: left;
+    margin: $spacing-unit 0;
+}
+
+.site-nav {
+    @include micro-header;
+    width: 10%;
+    padding-right: 5%;
+}
+.page-content-wrapper {
+    width: 80%;
+}
 
 .post-list {
     float: left;

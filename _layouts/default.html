@@ -8,15 +8,19 @@
   {% include header.html %}
 
   <div class="wrapper">
-    <nav class="site-nav">
-      <ul>
-        <li><a class="page-link" href="/about/">About</a></li>
-        <li><a class="page-link" href="/about/">Home</a></li>
-      </ul>
-    </nav>
-
     <div class="page-content">
-      {{ content }}
+
+      <nav class="site-nav">
+        <ul>
+          <li><a class="page-link" href="/about/">About</a></li>
+          <li><a class="page-link" href="/about/">Home</a></li>
+        </ul>
+      </nav>
+
+      <div class="page-content-wrapper">
+        {{ content }}
+      </div>
+
     </div>
   </div>
 
