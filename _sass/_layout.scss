@@ -17,7 +17,7 @@
 .site-nav {
     @include micro-header;
 
-    padding-top: $spacing-micro-unit + 4px;
+    padding-top: $spacing-micro-unit + 10px;
     margin-right: $spacing-unit*2;
 
     ul {
@@ -170,7 +170,7 @@
 .site-nav {
     @include micro-header;
     width: 10%;
-    padding-right: 5%;
+    padding-right: 9%;
 }
 .page-content-wrapper {
     width: 80%;
