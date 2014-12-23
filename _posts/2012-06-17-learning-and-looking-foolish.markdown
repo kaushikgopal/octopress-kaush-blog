@@ -6,8 +6,6 @@ slug: learning-and-looking-foolish
 title: Learning and Looking Foolish
 wordpress_id: 634
 categories:
-- notes
-tags:
 - quote
 ---
 

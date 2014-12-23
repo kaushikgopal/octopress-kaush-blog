@@ -7,8 +7,6 @@ title: "Will it improve upon on the silence? - Sri Sathya Sai Baba"
 wordpress_id: 179
 categories:
 - quote
-tags:
-- SSSB
 ---
 
 > Before you speak, think:
@@ -18,5 +16,6 @@ tags:
 > * Is it kind?
 > * Will it hurt anyone?
 > * **Will it improve on the silence**?
->
-> [Sri Sathya Sai Baba](http://www.saibabaofindia.com/sai_baba_quotes_on_silence.html)
+
+
+[Sri Sathya Sai Baba](http://www.saibabaofindia.com/sai_baba_quotes_on_silence.html)
