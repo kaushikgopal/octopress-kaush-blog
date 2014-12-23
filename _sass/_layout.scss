@@ -215,6 +215,11 @@
     font-size: 20px;
     font-family: $font-family-base;
     margin: 0 0 0 10px;
+
+    .linklog {
+        color: $color-contrast;
+    }
+
 }
 
 
@@ -244,6 +249,12 @@
 .post-content {
     margin-bottom: $spacing-unit;
     font-family: $font-family-base;
+
+    hr {
+        border: 1px solid $color-divider;
+        margin-bottom: 2px;
+        width: 50%;
+    }
 
     h2 {
         font-size: 32px;

@@ -1,3 +1,7 @@
+gems:
+  - octopress-linkblog
+  # - octopress-include-tag
+
 # Site settings
 title: kaushik gopal's blog
 email: iam@kaush.co
@@ -12,5 +16,9 @@ github_username:  kaushikgopal
 # Build settings
 markdown: kramdown
 
-gems:
-  - octopress-linkblog
+linkpost:
+  marker: →
+  marker_position: after
+posts:
+  marker: false
+  marker_position: before
