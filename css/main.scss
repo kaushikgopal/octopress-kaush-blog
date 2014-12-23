@@ -6,9 +6,10 @@
 
 
 // Our variables
-$base-font-family: 'PT Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-family-base: 'PT Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-family-alt: "Varela Round", "Lato", "PT Serif", Georgia, Times, "Times New Roman", serif;
 $header-font-family: "PT Serif", Georgia, Times, "Times New Roman", serif;
-$header-small-font-family: "Varela Round", "Lato", "PT Serif", Georgia, Times, "Times New Roman", serif;
+
 $base-font-size:   16px;
 $small-font-size:  $base-font-size * 0.875;
 $base-line-height: 1.5;
@@ -54,7 +55,7 @@ $on-laptop:        800px;
 }
 @mixin micro-header {
     text-transform: uppercase;
-    font-family: $header-small-font-family;
+    font-family: $font-family-alt;
 }
 
 // Import partials from `sass_dir` (defaults to `_sass`)

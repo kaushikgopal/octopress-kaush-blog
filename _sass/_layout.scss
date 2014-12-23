@@ -198,7 +198,7 @@
 
 .post-link {
     display: block;
-    font-family: $base-font-family;
+    font-family: $font-family-base;
     margin: 0 0 0 10px;
 }
 
@@ -207,13 +207,20 @@
  * Posts
  */
  .post-header {
-    margin-bottom: $spacing-unit;
+    margin-bottom: $spacing-unit/2;
+    float:left;
+}
+
+.post-title, .post-meta, .post-content {
+    clear: left;
 }
 
 .post-title {
-    font-size: 42px;
+    // font-size: 42px;
+    color: $color-link;
     letter-spacing: -1px;
-    line-height: 1;
+    margin-bottom: 0;
+    // line-height: 1;
 
     @include media-query($on-laptop) {
         font-size: 36px;
@@ -222,6 +229,7 @@
 
 .post-content {
     margin-bottom: $spacing-unit;
+    font-family: $font-family-alt;
 
     h2 {
         font-size: 32px;
