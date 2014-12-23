@@ -1,22 +1,35 @@
 /**
  * Site header
  */
-.site-header {
+ .site-header {
     min-height: 56px;
 
     // Positioning context for the mobile navigation icon
     position: relative;
 }
 
-#banner {margin-top : 40px }
+#banner {margin-top : $spacing-unit}
 .site-title {
     &:hover { text-decoration: none; }
 }
 
-.site-nav {
+.site-nav, .page-content {
     float: left;
-    line-height: 56px;
+    display:table-cell;
+    margin: $spacing-unit 0;
+}
+
+.site-nav {
     @include micro-header;
+
+    padding-top: $spacing-micro-unit + 4px;
+    margin-right: $spacing-unit*2;
+
+    ul {
+        list-style: none;
+        margin-left: 0;
+        text-align: right;
+    }
 
     .menu-icon {
         display: none;
@@ -82,7 +95,7 @@
 /**
  * Site footer
  */
-.site-footer {
+ .site-footer {
     border-top: 1px solid $grey-color-light;
     padding: $spacing-unit 0;
 }
@@ -152,10 +165,6 @@
 /**
  * Page content
  */
-.page-content {
-    margin: 40px 0;
-}
-
 /* .page-heading {
     font-size: 20px;
 } */
@@ -176,7 +185,8 @@
 
 .post-meta {
     @include micro-header;
-    margin-top: 6px;
+    margin-top: $spacing-micro-unit + 3px;
+    font-size: 14px;
 }
 
 .post-link {
@@ -189,7 +199,7 @@
 /**
  * Posts
  */
-.post-header {
+ .post-header {
     margin-bottom: $spacing-unit;
 }
 
