@@ -6,6 +6,7 @@ p, blockquote, pre, hr,
 dl, dd, ol, ul, figure {
     margin: 0;
     padding: 0;
+    -webkit-font-smoothing: antialiased;
 }
 
 
@@ -14,11 +15,11 @@ dl, dd, ol, ul, figure {
  * Basic styling
  */
 body {
-    font-family: $base-font-family;
+    font-family: $font-family-base;
     font-size: $base-font-size;
     line-height: $base-line-height;
     font-weight: 300;
-    color: $text-color;
+    color: $color-text;
     background-color: $background-color;
     -webkit-text-size-adjust: 100%;
 }
@@ -81,6 +82,7 @@ li {
  */
 h1, h2, h3, h4, h5, h6 {
     font-weight: 300;
+    font-family: $header-font-family;
 }
 
 
@@ -89,15 +91,11 @@ h1, h2, h3, h4, h5, h6 {
  * Links
  */
 a {
-    color: $brand-color;
+    color: $color-link;
     text-decoration: none;
 
-    &:visited {
-        color: darken($brand-color, 15%);
-    }
-
     &:hover {
-        color: $text-color;
+        color: $color-contrast;
         text-decoration: underline;
     }
 }
@@ -158,8 +156,8 @@ pre {
     max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
     margin-right: auto;
     margin-left: auto;
-    padding-right: $spacing-unit;
     padding-left: $spacing-unit;
+    padding-right: $spacing-unit;
     @extend %clearfix;
 
     @include media-query($on-laptop) {

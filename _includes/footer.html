@@ -2,7 +2,14 @@
 
   <div class="wrapper">
 
-    <h2 class="footer-heading">{{ site.title }}</h2>
+    <form action="http://google.com/search" method="get">
+      <fieldset role="search">
+        <input type="hidden" name="q" value="site:blog.kaush.co">
+        <input class="search" type="text" name="q" results="0" placeholder="Search ...">
+      </fieldset>
+    </form>
+
+    <!-- <h2 class="footer-heading">{{ site.title }}</h2>
 
     <div class="footer-col-wrapper">
       <div class="footer-col  footer-col-1">
@@ -48,7 +55,7 @@
       <div class="footer-col  footer-col-3">
         <p class="text">{{ site.description }}</p>
       </div>
-    </div>
+    </div> -->
 
   </div>
 

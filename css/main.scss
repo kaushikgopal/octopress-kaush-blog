@@ -6,19 +6,28 @@
 
 
 // Our variables
-$base-font-family: 'Source Sans Pro', 'PT Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-family-base: 'PT Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-family-alt: "Varela Round", "Lato", "PT Serif", Georgia, Times, "Times New Roman", serif;
 $header-font-family: "PT Serif", Georgia, Times, "Times New Roman", serif;
+
 $base-font-size:   16px;
 $small-font-size:  $base-font-size * 0.875;
 $base-line-height: 1.5;
 
 
-$spacing-unit:     30px;
+$spacing-unit:          30px;
+$spacing-micro-unit:    6px;
 
-$text-color:       #bbb;
-$background-color: #62665f; // military green color
-$brand-color:      darken($background-color, 15%);
+$color-brand:       #62665f; // military green color
+$color-text:        #bbb;
+$color-link:        whitesmoke;
+$color-contrast:    orange;
+$color-divider:     darken(#bbb, 25%);
 
+$background-color: $color-brand;
+
+// deprecate below later
+$brand-color:      $color-brand;
 $grey-color:       #efefef; //
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
@@ -44,12 +53,14 @@ $on-laptop:        800px;
         @content;
     }
 }
-
-
+@mixin micro-header {
+    text-transform: uppercase;
+    font-family: $font-family-alt;
+}
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
-        "base",
-        "layout",
-        "syntax-highlighting"
+"base",
+"layout",
+"syntax-highlighting"
 ;
