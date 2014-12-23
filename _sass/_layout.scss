@@ -9,20 +9,20 @@
 }
 
 .site-title {
-    float: left;
     &:hover { text-decoration: none; }
 }
 
 .site-nav {
-    float: right;
+    float: left;
     line-height: 56px;
+    @include micro-header;
 
     .menu-icon {
         display: none;
     }
 
     .page-link {
-        color: $color-text;
+        // color: $color-text;
         line-height: $base-line-height;
 
         // Gaps between nav items, but not on the first one
@@ -152,7 +152,7 @@
  * Page content
  */
 .page-content {
-    padding: $spacing-unit 0;
+    // padding: $spacing-unit;
 }
 
 /* .page-heading {
@@ -164,20 +164,24 @@
     list-style: none;
 
     > li {
-        margin-bottom: $spacing-unit;
+        clear: both;
     }
 }
 
+.post-meta, .post-link {
+    float: left;
+}
+
 .post-meta {
-    font-size: $small-font-size;
-    color: $grey-color;
+    @include micro-header;
+    margin-top: 6px;
 }
 
 .post-link {
     display: block;
-    font-size: 24px;
+    font-family: $base-font-family;
+    margin: 0 0 0 10px;
 }
-
 
 
 /**
