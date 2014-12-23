@@ -18,10 +18,5 @@ So [my brother](http://www.karthickgopal.net/incredible-depth-in-the-mundane/) i
 
 If you're losing sleep finding out which fonts were used:
 
-**[AF Generation Z](http://new.myfonts.com/fonts/fw-acme/af-generation-z/) (in the text messages)**
-
-![AF Generation Z](/images/uploads/2011/12/mobile.png "AF Generation Z")
-
-**[P22 London Underground](http://new.myfonts.com/fonts/p22/underground/) (when deducing the clues)**
-
-![P22 Johnston Underground](/images/uploads/2011/12/deduction.png "P22 Johnston Underground")
+* [AF Generation Z](http://new.myfonts.com/fonts/fw-acme/af-generation-z/) (in the text messages)
+* [P22 London Underground](http://new.myfonts.com/fonts/p22/underground/) (when deducing the clues)
