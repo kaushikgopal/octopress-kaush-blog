@@ -1,0 +1,41 @@
+---
+layout: post
+title: "2012 in retrospective"
+date: 2013-01-01
+comments: true
+external-url:
+categories:
+tags:
+- new-year-resolution
+---
+
+My [last post](http://journal.kaush.co/2012/12/31/itunes-purchase-error-your-account-is-not-valid-for-use-in-this-store/) didn't exactly end in an optimistic note. Let's correct that:
+
+> **Wishing you all a happy, joyous and peaceful 2013 folks!**
+
+The Mayans predicted that the world-as we know it-would end but we're still here standing (cheers to that, [you should get this shirt in celebration](http://www.apocalypsetee2012.com/)).
+
+<!-- more -->
+
+The new year is a time to reflect and wipe the slate clean. People [advice against making new year resolutions](http://ryaneshea.com/dont-make-a-new-years-resolution) but I do them anyway. I like taking a look back at my [previous resolutions](http://journal.kaush.co/tag/new-year-resolution/). Helps me get a better understanding of my achievement or lack thereof.
+
+## Stuff done in 2012:
+
+* Got in to the [masters program at Carnegie Mellon](http://www.cmu.edu/silicon-valley/academics/software-engineering/index.html).
+* Learned [Ruby](http://journal.kaush.co/learning-ruby.html) (& [Rails](http://journal.kaush.co/learning-rails.html)) and built a couple of sites with it. Long way to go but loving it.
+* Screwed around with some [small github projects](https://github.com/kaushikgopal/).
+* [Moved this blog](http://journal.kaush.co/2012/12/23/kaushs-journal-now-powered-by-octopress/) along with all my old wordpress posts to Octopress.
+
+Not too bad.
+
+## Stuff I couldn't get done in 2012:
+
+* Get back in shape (This one's been there since my 2009 new year resolution list. But I have a good feeling 2013 will see this task done).
+* Sound engineering (I did do a bunch of editing here and there for some folks, but this was stuff I had down and didn't particularly learn anything new in the process).
+
+## Stuff I want to do in 2013
+
+1. Get back in shape (In addition to hitting the gym planning to [eat better](http://www.fourhourworkweek.com/blog/2012/07/12/how-to-lose-100-pounds/)).
+2. Get more sleep (I have this bad feeling 2012 [zapped some of my brain cells](http://news.bbc.co.uk/2/hi/health/6347043.stm)).
+3. Get really good at Rails (looking at running through the [Destroy all Software](https://www.destroyallsoftware.com/screencasts) and [Railcast](http://railscasts.com/) screencasts).
+4. Get a job after my masters, [preferably doing something I love](http://www.paulgraham.com/love.html).
