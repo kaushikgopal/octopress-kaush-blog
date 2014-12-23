@@ -6,12 +6,15 @@ gems:
 title: kaushik gopal's blog
 email: iam@kaush.co
 description: > # this means to ignore newlines until "baseurl:"
-  Curated thoughts on various topics like music, technology, life and personal stuff from Kaushik Gopal.
+  Curated thoughts on various topics like programming, technology, music, life and personal stuff from Kaushik Gopal.
   Friends call me kaush.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://blog.kaush.co" # the base hostname & protocol for your site
 twitter_username: kaushikgopal
 github_username:  kaushikgopal
+root: /
+permalink: /:year/:month/:day/:title/
+category_dir: categories
 
 # Build settings
 markdown: kramdown
