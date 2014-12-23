@@ -18,7 +18,7 @@ body {
     font-size: $base-font-size;
     line-height: $base-line-height;
     font-weight: 300;
-    color: $text-color;
+    color: $color-text;
     background-color: $background-color;
     -webkit-text-size-adjust: 100%;
 }
@@ -81,6 +81,7 @@ li {
  */
 h1, h2, h3, h4, h5, h6 {
     font-weight: 300;
+    font-family: $header-font-family;
 }
 
 
@@ -89,15 +90,11 @@ h1, h2, h3, h4, h5, h6 {
  * Links
  */
 a {
-    color: $brand-color;
+    color: $color-link;
     text-decoration: none;
 
-    &:visited {
-        color: darken($brand-color, 15%);
-    }
-
     &:hover {
-        color: $text-color;
+        color: $color-contrast;
         text-decoration: underline;
     }
 }
