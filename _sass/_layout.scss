@@ -206,12 +206,13 @@
 
 .post-meta {
     @include micro-header;
-    margin-top: $spacing-micro-unit + 3px;
+    margin-top: $spacing-micro-unit - 1px;
     font-size: 14px;
 }
 
 .post-link {
     display: block;
+    font-size: 20px;
     font-family: $font-family-base;
     margin: 0 0 0 10px;
 }
@@ -230,9 +231,8 @@
 }
 
 .post-title {
-    font-family: $font-family-base;
     color: $color-link;
-    // letter-spacing: -1px;
+    letter-spacing: -1px;
     margin-bottom: 0;
     // line-height: 1;
 
