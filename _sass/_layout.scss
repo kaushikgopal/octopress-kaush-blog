@@ -18,12 +18,11 @@
     @include micro-header;
 
     padding-top: $spacing-micro-unit + 10px;
-    margin-right: $spacing-unit*2;
+    margin-right: $spacing-unit;
 
     ul {
         list-style: none;
         margin-left: 0;
-        text-align: right;
     }
 
     .menu-icon {
@@ -200,28 +199,27 @@
     }
 }
 
-.post-meta, .post-link {
-    float: left;
-}
-
-.post-meta {
+.post-meta, .post-meta-index {
     @include micro-header;
-    margin-top: $spacing-micro-unit - 1px;
+    margin-top: $spacing-micro-unit;
+    padding: 2px 4px 0 0;
     font-size: 14px;
+    text-align: right;
 }
 
-.post-link {
+.post-link, .post-link-index {
     display: block;
-    font-size: 20px;
+    font-size: 18px;
     font-family: $font-family-base;
-    margin: 0 0 0 10px;
 
     .linklog {
         color: $color-contrast;
     }
-
 }
 
+.post-meta, .post-link {
+    float: left;
+}
 
 /**
  * Posts
