@@ -2,6 +2,7 @@
  * Site header
  */
  .site-header {
+    font-family: $header-font-family;
     min-height: 56px;
 
     // Positioning context for the mobile navigation icon
@@ -255,26 +256,28 @@
     }
 
     h2 {
-        font-size: 32px;
+        font-size: 20px;
+        color: $color-link;
 
         @include media-query($on-laptop) {
-            font-size: 28px;
+            font-size: 20px;
         }
     }
 
     h3 {
-        font-size: 26px;
+        font-size: 16px;
+        text-decoration: underline;
 
         @include media-query($on-laptop) {
-            font-size: 22px;
+            font-size: 16px;
         }
     }
 
-    h4 {
-        font-size: 20px;
+    /* h4 {
+        font-size: 16px;
 
         @include media-query($on-laptop) {
-            font-size: 18px;
+            font-size: 16px;
         }
-    }
+    } */
 }
