@@ -1,10 +1,11 @@
 ---
 layout: post
-title: "New Year Resolutions for 2010"
+title: "New Year - 2010"
 date: 2009-12-31
 comments: true
 external-url:
 categories:
+- new-year
 tags:
 - new-year-resolution
 ---
