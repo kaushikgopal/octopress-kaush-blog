@@ -1,0 +1,55 @@
+---
+layout: post
+title: "2014 in review"
+date: 2014-12-31T16:49:21-08:00
+categories:
+- new-year
+---
+
+i love the holidays. i *especially* love the new year's though cause it's an acceptable time to hit that big-nice-red reset button.
+
+## stuff I wanted to [get done in 2013](http://blog.kaush.co/2013/01/01/new-year-2013/)/2014
+
+1. get back in shape (significant progress on this front)
+2. get more sleep (been getting atleast 6 hours, which is good, now to bump it to 7)
+3. get really good at Rails (switched gears and became an android developer. i like to think i'm a pretty decent one too)
+4. get a job after my masters
+
+
+## stuff done in 2013/2014:
+
+### joined [wedding party](http://weddingpartyapp.com/jobs)
+
+i joined as a full-time rails dev but landed up becoming a full-time android dev for them. we have some of the craziest, smartest and fun loving peeps in the industry. i'm absolutely loving my time here.
+
+### released a lot of new android stuff
+
+besides releasing a tonne of cool features for wedding party, i managed to ship two big android projects: [Android-floatlabel](https://github.com/weddingparty/AndroidFloatLabel) and [learning Android-RxJava](https://github.com/kaushikgopal/Android-RxJava), both of which have been received pretty well by the open source community
+
+### new blog design
+
+i changed this blog's design (again) to match my [homepage](http://kaush.co). i'm really happy with this iteration of the design. i think it has just the right balance of minimalism, simplicity and style
+
+### getting fit(ter)
+
+i'm a regular again at the gym. i was probably at my fittest around 2007 and i've still got a long way to go, before i get to that shape again. but i'm getting there.
+
+overall, 2013/2014 went by in a jiffy and was a total win!
+
+
+## stuff I want to do in 2015:
+
+### start playing the piano
+
+this is an area i've totally fallen off the bandwagon. i don't do enough sound-engineering or music anymore. i'm thinking of getting a piano/synthesizer and just start jamming again.
+
+### travel two atleast two new places that i've never been
+
+a bunch of my close friends and i love traveling and we hit a high in 2013 (just after graduation). it was amazing until 2014, where i've hit a complete travel slump.
+
+### release an independent (android) app
+
+i've always wanted to build the [Day One](http://dayoneapp.com/) app for android (given that they are [probably never going to](https://dayone.zendesk.com/hc/en-us/articles/200173625-Will-there-ever-be-an-Android-app-)). there are very few high-quality journaling apps on android. i think this is a personal itch that i'm going to try to scratch.
+
+
+here's to a happy adventurous and exciting 2015!
