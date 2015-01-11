@@ -13,11 +13,11 @@
          @include media-query($on-palm) {
            h1 {text-align: center;}
          }
-     }
 
-    .site-title {
-        &:hover { text-decoration: none; }
-    }
+        .site-title {
+            &:hover { text-decoration: none; }
+        }
+     }
 }
 
 /* Content
@@ -74,6 +74,10 @@
         margin: 0;
         list-style: none;
 
+        @include media-query($on-palm) {
+            width: 100%;
+        }
+
         > li {
             clear: both;
         }
@@ -101,10 +105,22 @@
     }
 }
 
-// we don't want below style for table.post-list variants
+// styles that are different between table index and independent posts
+
 .post-meta, .post-link {
     float: left;
 }
+
+@include media-query($on-palm) {
+    .post-meta-index {
+        font-size: 10px;
+        width: 14%;
+    }
+    .post-link-index {
+        font-size: 13px;
+    }
+}
+
 
 /* Post content section
 ========================= */
