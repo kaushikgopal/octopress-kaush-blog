@@ -53,7 +53,17 @@
     }
 }
 
-/* Page
+.nav-link {
+    // color: $color-text;
+    line-height: $base-line-height;
+
+    // Gaps between nav items, but not on the first one
+    &:not(:first-child) {
+        margin-left: 20px;
+    }
+}
+
+/* Content
 ================================================== */
 
 /* .page-heading {
@@ -62,16 +72,6 @@
 
 .page-content-wrapper {
     min-width: 535px;
-}
-
-.page-link {
-    // color: $color-text;
-    line-height: $base-line-height;
-
-    // Gaps between nav items, but not on the first one
-    &:not(:first-child) {
-        margin-left: 20px;
-    }
 }
 
 
@@ -107,8 +107,8 @@
     float: left;
 }
 
-/* Posts
-================================================== */
+/* Post section
+=================== */
 
 .post-header {
     margin-bottom: $spacing-unit/2;
