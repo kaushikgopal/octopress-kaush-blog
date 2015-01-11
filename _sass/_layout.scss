@@ -10,7 +10,9 @@
     #banner {
         margin-top : $spacing-unit;
 
-
+         @include media-query($on-palm) {
+           h1 {text-align: center;}
+         }
      }
 
     .site-title {
