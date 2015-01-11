@@ -39,6 +39,7 @@ $on-laptop:        720px;
 // Width of the content area
 $content-width:         720px;
 $page-content-width:    530px;
+$smallest-mobile-width: 320px;
 
 // Using media queries with like this:
 // @include media-query($on-mobile) {

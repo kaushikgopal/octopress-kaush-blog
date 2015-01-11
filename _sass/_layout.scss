@@ -131,12 +131,23 @@
             margin-bottom: 0;
             font-size: 26px;
             font-family: $font-family-base;
+
+            @include media-query($on-mobile) {
+                font-size: 22px;
+            }
         }
+
     }
 }
+
 .post-content {
     clear: left;
     margin-bottom: $spacing-unit;
+
+    @include media-query($on-mobile) {
+        font-size: 14px;
+        max-width: $smallest-mobile-width;
+    }
 
     hr {
         border: 1px solid $color-divider;
@@ -147,28 +158,12 @@
     h2 {
         font-size: 20px;
         color: $color-link;
-
-        @include media-query($on-laptop) {
-            font-size: 20px;
-        }
     }
 
     h3 {
         font-size: 16px;
         text-decoration: underline;
-
-        @include media-query($on-laptop) {
-            font-size: 16px;
-        }
     }
-
-    /* h4 {
-        font-size: 16px;
-
-        @include media-query($on-laptop) {
-            font-size: 16px;
-        }
-    } */
 }
 
 
