@@ -1,7 +1,13 @@
-/**
- * Site header
- */
- .site-header {
+.site-nav, .page-content-wrapper {
+    float: left;
+    margin: $spacing-unit 0;
+}
+
+/* Site header
+================================================== */
+#banner { margin-top : $spacing-unit }
+
+.site-header {
     font-family: $header-font-family;
     min-height: 56px;
 
@@ -9,62 +15,65 @@
     position: relative;
 }
 
-#banner {margin-top : $spacing-unit}
 .site-title {
     &:hover { text-decoration: none; }
-}
-
-
-.site-nav {
-    @include micro-header;
-
-    padding-top: $spacing-micro-unit + 10px;
-    margin-right: $spacing-unit;
-
-    ul {
-        list-style: none;
-        margin-left: 0;
-    }
-
-    .menu-icon {
-        display: none;
-    }
-
-    .page-link {
-        // color: $color-text;
-        line-height: $base-line-height;
-
-        // Gaps between nav items, but not on the first one
-        &:not(:first-child) {
-            margin-left: 20px;
-        }
-    }
-
-    @include media-query($on-palm) {
-    }
-}
-
-
-/**
- * Page content
- */
-/* .page-heading {
-    font-size: 20px;
-} */
-.site-nav, .page-content-wrapper {
-    float: left;
-    margin: $spacing-unit 0;
 }
 
 .site-nav {
     @include micro-header;
     width: 10%;
     padding-right: 9%;
+    padding-top: $spacing-micro-unit + 10px;
+    margin-right: $spacing-unit;
+
+    .menu-icon {
+        display: none;
+    }
+
+    ul {
+        list-style: none;
+        margin-left: 0;
+    }
+
+    @include media-query($on-palm) {
+
+        width: 100%;
+        margin: 0px;
+        text-align: center;
+
+        ul  {
+            margin: 0 auto;
+            li {
+                display: inline;
+                text-align: center;
+                // float: left;
+                padding: $spacing-unit;
+            }
+        }
+    }
 }
 
+/* Page
+================================================== */
+
+/* .page-heading {
+    font-size: 20px;
+} */
+
 .page-content-wrapper {
-    width: 80%;
+    min-width: 535px;
 }
+
+.page-link {
+    // color: $color-text;
+    line-height: $base-line-height;
+
+    // Gaps between nav items, but not on the first one
+    &:not(:first-child) {
+        margin-left: 20px;
+    }
+}
+
 
 .post-list {
     float: left;
@@ -98,10 +107,10 @@
     float: left;
 }
 
-/**
- * Posts
- */
- .post-header {
+/* Posts
+================================================== */
+
+.post-header {
     margin-bottom: $spacing-unit/2;
     float:left;
 }
@@ -159,10 +168,9 @@
 }
 
 
+/* Site footer
+================================================== */
 
-/**
- * Site footer
- */
  .site-footer {
     border-top: 1px solid $color-divider;
     padding: $spacing-unit 0;
@@ -185,12 +193,6 @@
 .footer-heading {
     font-size: 18px;
     margin-bottom: $spacing-unit / 2;
-}
-
-.contact-list,
-.social-media-list {
-    list-style: none;
-    margin-left: 0;
 }
 
 .footer-col-wrapper {
