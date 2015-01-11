@@ -74,7 +74,7 @@
     @include micro-header;
     margin-top: $spacing-micro-unit;
     padding: 2px 4px 0 0;
-    font-size: 14px;
+    font-size: 12px;
     text-align: right;
 }
 
@@ -99,9 +99,6 @@
 }
 
 @include media-query($on-tablet) {
-    .post-meta-index {
-        font-size: 12px;
-    }
     .post-link-index {
         font-size: 16px;
     }
