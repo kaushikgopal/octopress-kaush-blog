@@ -1,22 +1,29 @@
-.site-nav, .page-content-wrapper {
-    float: left;
-    margin: $spacing-unit 0;
-}
-
-/* Site header
+/* Header
 ================================================== */
-#banner { margin-top : $spacing-unit }
-
 .site-header {
     font-family: $header-font-family;
     min-height: 56px;
 
     // Positioning context for the mobile navigation icon
     position: relative;
+
+    #banner {
+        margin-top : $spacing-unit;
+
+
+     }
+
+    .site-title {
+        &:hover { text-decoration: none; }
+    }
 }
 
-.site-title {
-    &:hover { text-decoration: none; }
+/* Content
+================================================== */
+
+.site-nav, .page-content-wrapper {
+    float: left;
+    margin: $spacing-unit 0;
 }
 
 .site-nav {
@@ -26,13 +33,13 @@
     padding-top: $spacing-micro-unit + 10px;
     margin-right: $spacing-unit;
 
-    .menu-icon {
-        display: none;
-    }
-
     ul {
         list-style: none;
         margin-left: 0;
+
+        .nav-link {
+            line-height: $base-line-height;
+        }
     }
 
     @include media-query($on-palm) {
@@ -43,47 +50,36 @@
 
         ul  {
             margin: 0 auto;
+
             li {
                 display: inline;
                 text-align: center;
                 // float: left;
-                padding: $spacing-unit;
+                &:not(:first-child) {
+                    margin-left: $spacing-unit;
+                }
             }
         }
     }
 }
 
-.nav-link {
-    // color: $color-text;
-    line-height: $base-line-height;
-
-    // Gaps between nav items, but not on the first one
-    &:not(:first-child) {
-        margin-left: 20px;
-    }
-}
-
-/* Content
-================================================== */
-
-/* .page-heading {
-    font-size: 20px;
-} */
 
 .page-content-wrapper {
-    min-width: 535px;
-}
+    min-width: $page-content-width;
 
+    table.post-list {
+        float: left;
+        margin: 0;
+        list-style: none;
 
-.post-list {
-    float: left;
-    margin: 0;
-    list-style: none;
-
-    > li {
-        clear: both;
+        > li {
+            clear: both;
+        }
     }
 }
+
+/* Post metadata section
+========================= */
 
 .post-meta, .post-meta-index {
     @include micro-header;
@@ -103,37 +99,36 @@
     }
 }
 
+// we don't want below style for table.post-list variants
 .post-meta, .post-link {
     float: left;
 }
 
-/* Post section
-=================== */
+/* Post content section
+========================= */
 
 .post-header {
     margin-bottom: $spacing-unit/2;
     float:left;
-}
 
-.post-title, .post-meta, .post-content {
-    clear: left;
-}
+    .post-title {
+        color: $color-link;
+        letter-spacing: -1px;
+        margin-bottom: 0;
+        font-size: 26px;
+        font-family: $font-family-base;
+        // line-height: 1;
 
-.post-title {
-    color: $color-link;
-    letter-spacing: -1px;
-    margin-bottom: 0;
-    font-size: 26px;
-    font-family: $font-family-base;
-    // line-height: 1;
-
-    @include media-query($on-laptop) {
-        font-size: 36px;
+        @include media-query($on-laptop) {
+            font-size: 36px;
+        }
     }
 }
 
 .post-content {
+    clear: left;
     margin-bottom: $spacing-unit;
+
     hr {
         border: 1px solid $color-divider;
         margin-bottom: 2px;
@@ -171,7 +166,7 @@
 /* Site footer
 ================================================== */
 
- .site-footer {
+.site-footer {
     border-top: 1px solid $color-divider;
     padding: $spacing-unit 0;
 }
