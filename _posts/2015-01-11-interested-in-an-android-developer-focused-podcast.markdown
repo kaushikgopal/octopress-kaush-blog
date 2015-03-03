@@ -30,3 +30,5 @@ i've been toying with the idea of starting an android podcast with a developer a
 it's clearly a lot of work and will require a solid chunk of my free time. i don't intend to make any money out of it so i'll probably have to bear the costs myself intially (i really don't mind that part at all though cause i'll definitely be learning along the way). the effort only makes sense though if a larger group of people can benefit from this.
 
 i'm trying to gauge interest and will explore the specifics only if people seem interested. so i ask you: [would you genuinely be interested in a developer-focused android podcast? (let me know by answering this poll)](https://polldaddy.com/poll/8574924/).
+
+[update:  many people were interseted, so i [teamed up with the amazing Donn Felker](http://www.donnfelker.com/announcing-fragmented-podcast-android-developers/) to start "[Fragmented - An Android developer podcast](http://fragmentedpodcast.com/)". [Let us know what you think](http://twitter.com/kaushikgopal).]
