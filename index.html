@@ -20,7 +20,7 @@ layout: default
             {{ post.title | truncate: 45 }}
         {% endif %}
         </a>
-      {% if post.linkpost %}<a class="linklog" href="{{ post.title_link }}">[link {{ site.linkpost.marker }}]</a>{% endif %}
+      {% if post.linkpost %}<a class="linklog" href="{{ post.title_url }}">[link {{ site.linkpost.marker }}]</a>{% endif %}
     </td>
   </tr>
   {% endfor %}
