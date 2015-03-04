@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "Interested in an Android Developer Podcast?"
+categories:
+- fragmented
+- podcast
 date: 2015-01-11T00:01:55-08:00
 ---
 
