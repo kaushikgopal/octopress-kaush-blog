@@ -1,6 +1,7 @@
 gems:
   - octopress-linkblog
   # - octopress-include-tag
+  - octopress-littlefoot
 
 # Site settings
 title: kaushik gopal's blog
