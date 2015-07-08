@@ -6,19 +6,20 @@
 
 
 // Our variables
-$font-family-base: "Varela Round", 'PT Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-family-base: "Source Sans Pro", 'PT Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $header-font-family: "PT Serif", Georgia, Times, "Times New Roman", serif;
+$special-header-font-family: "Varela Round", $header-font-family;
 
-$base-font-size:   16px;
+$base-font-size:   18px;
 $small-font-size:  $base-font-size * 0.875;
-$base-line-height: 1.5;
+$base-line-height: 1.4;
 
 
 $spacing-unit:          30px;
 $spacing-micro-unit:    6px;
 
 $color-brand:       #62665f; // military green color
-$color-text:        #bbb;
+$color-text:        #C3C1C1;
 $color-link:        whitesmoke;
 $color-contrast:    orange;
 $color-divider:     darken(#bbb, 25%);

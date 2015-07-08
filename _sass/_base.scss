@@ -18,13 +18,13 @@ body {
     font-family: $font-family-base;
     font-size: $base-font-size;
     line-height: $base-line-height;
-    font-weight: 300;
+    // font-weight: 300;
     color: $color-text;
     background-color: $background-color;
     -webkit-text-size-adjust: 100%;
 
     strong {
-        letter-spacing: -1px;
+        // letter-spacing: -1px;
         // Varela Round looks ghastly when bold
     }
 }

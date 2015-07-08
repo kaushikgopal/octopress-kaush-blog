@@ -74,7 +74,7 @@
     @include micro-header;
     margin-top: $spacing-micro-unit;
     padding: 2px 4px 0 0;
-    font-size: 12px;
+    // font-size: 12px;
     text-align: right;
 }
 
@@ -130,7 +130,8 @@
             letter-spacing: -1px;
             margin-bottom: 0;
             font-size: 26px;
-            font-family: $font-family-base;
+            // font-family: $font-family-base;
+            font-family: $special-header-font-family;
 
             @include media-query($on-mobile) {
                 font-size: 22px;
