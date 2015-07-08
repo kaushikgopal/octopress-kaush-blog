@@ -56,7 +56,7 @@ $smallest-mobile-width: 320px;
 }
 @mixin micro-header {
     text-transform: uppercase;
-    font-family: $font-family-base;
+    font-family: $special-header-font-family;
 }
 
 // Import partials from `sass_dir` (defaults to `_sass`)

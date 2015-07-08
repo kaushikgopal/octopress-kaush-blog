@@ -74,7 +74,7 @@
     @include micro-header;
     margin-top: $spacing-micro-unit;
     padding: 2px 4px 0 0;
-    // font-size: 12px;
+    font-size: 0.65em;
     text-align: right;
 }
 
@@ -93,6 +93,7 @@
 .post-meta, .post-link {
     float: left;
 }
+
 .post-meta {
     margin-top: 0;
     padding: 0;
@@ -128,10 +129,10 @@
         .post-title {
             color: $color-link;
             letter-spacing: -1px;
+            font-weight: normal;
             margin-bottom: 0;
             font-size: 26px;
-            // font-family: $font-family-base;
-            font-family: $special-header-font-family;
+            font-family: $font-family-base;
 
             @include media-query($on-mobile) {
                 font-size: 22px;
