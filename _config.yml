@@ -17,6 +17,10 @@ root: /
 permalink: /:year/:month/:day/:title/
 category_dir: categories
 
+# Analytics
+google_universal_analytics: UA-64916447-1
+google_universal_analytics_cookiedomain: auto
+
 # Build settings
 markdown: kramdown
 
