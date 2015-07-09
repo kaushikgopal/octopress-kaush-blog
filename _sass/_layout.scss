@@ -168,6 +168,32 @@
     }
 }
 
+/* Code snippets
+================================================== */
+
+.code-highlight-caption {
+    font-family: $font-family-base !important;
+}
+.code-highlight-pre {
+    font-size: 0.7em;
+    line-height: 0.7em;
+}
+
+.code-highlight-figure {
+    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
+    max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
+
+    @include media-query($on-laptop) {
+        max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
+        max-width:         calc(#{$content-width} - (#{$spacing-unit}));
+    }
+
+    @include media-query($on-mobile) {
+        font-size: 14px;
+        max-width: $smallest-mobile-width;
+    }
+}
+
 
 /* Site footer
 ================================================== */

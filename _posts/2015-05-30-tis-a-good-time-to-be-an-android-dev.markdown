@@ -10,6 +10,8 @@ The 180-270%-ish screen setup at the keynote was spectacular (occasional weird a
 
 The announcements were pertty rad: [Google Photos](https://www.google.com/photos/about/) is going to be a godsend (Gmail for your photos) , [Now on Tap](http://www.theverge.com/2015/5/28/8677147/google-now-on-tap-announced) (a.k.a Skynet 0.1) was scary awesome, the VR demos graduated from a dorky/nerdy cardboard project to making Oculus just skip a heartbeat (love what they're  doing with [Expeditions](https://www.google.com/edu/expeditions/)) and obvioulsy the [improvements with Android M](http://www.droid-life.com/2015/05/28/google-announces-android-m-developer-preview-here-is-a-list-of-changes/).
 
+{% gist 6c25bc9470bbd11fcf7c RoundedBitmapDrawableUsage.java  %}
+
 All this was cool and all but I would have been just as impressed watching the announcements from the comforts of my couch. What I personally found invaluable was the chance to meet some of the most amazing  developers in the world. If you haven't already heard I now co-host an Android developer podcast called [Fragmented](http://fragmentedpodcast.com) (if you're an Android developer you sould totally listen to us btw).
 
 There's always room to complain. The lines were terribly long, the space management inside Moscone left a lot to wi. But as my good friend @yoghurtearl mentioned
