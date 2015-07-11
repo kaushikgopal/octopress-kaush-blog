@@ -168,6 +168,22 @@
     }
 }
 
+/* footnotes
+================================================== */
+
+.littlefoot-container {
+    font-size: 0.9em;
+}
+
+.littlefoot-footnote-content {
+    font-family: $font-family-base !important;
+    a {
+        font-style: italic;
+        color: orange;
+        font-weight: bold;
+    }
+}
+
 /* Code snippets
 ================================================== */
 
