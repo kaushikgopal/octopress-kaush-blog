@@ -97,11 +97,13 @@
 
 .post-meta, .post-link {
     float: left;
+    width: 100%;
 }
 
 .post-meta {
     margin-top: 0;
     padding: 0;
+    text-align: center;
 }
 
 @include media-query($on-tablet) {
@@ -128,6 +130,7 @@
     padding-top: $spacing-unit;
 
     .post-header {
+
         margin-bottom: $spacing-unit/2;
         float:left;
 
@@ -140,6 +143,7 @@
             font-family: $font-family-base;
 
             @include media-query($on-mobile) {
+                text-align: center;
                 font-size: 22px;
             }
         }
@@ -155,7 +159,7 @@
 
     @include media-query($on-mobile) {
         font-size: 14px;
-        max-width: $smallest-mobile-width;
+        // max-width: $smallest-mobile-width;
     }
     p {
         margin-bottom: 1.3em;
@@ -222,7 +226,7 @@ blockquote {
 
     @include media-query($on-mobile) {
         font-size: 14px;
-        max-width: $smallest-mobile-width;
+        // max-width: $smallest-mobile-width;
     }
 }
 
