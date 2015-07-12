@@ -27,6 +27,8 @@
 .page-content-wrapper {
     float: left;
     margin: $spacing-micro-unit 0;
+    width: 100%;
+    min-width: $page-content-width;
 }
 
 .site-nav {
@@ -50,7 +52,10 @@
 }
 
 .page-content-wrapper {
-    min-width: $page-content-width;
+
+    @include media-query($on-mobile) {
+        min-width: $smallest-mobile-width;
+    }
 
     table.post-list {
         float: left;
@@ -107,11 +112,11 @@
 
 @include media-query($on-mobile) {
     .post-meta-index {
-        font-size: 10px;
-        width: 14%;
+        font-size: 0.45em;
+        width: 19.6%;
     }
     .post-link-index {
-        font-size: 13px;
+        font-size: 0.65em;
     }
 }
 
