@@ -9,7 +9,7 @@ tags:
 - android
 ---
 
-A common question most android developers have when using RxJava is: how do I cache or persist the work done by my observables over a configuration change? If you start a network call and the user decides to rotate the screen, the work spent in executing that network call would have been in vain (considering the OS would recreate your activity).
+A common question most android developers have when using RxJava is: how do I cache or persist the work done by my observables over a configuration change? If you start a network call and the user decides to rotate the screen, the work spent in executing that network call would have been in vain (considering the OS would re-create your activity).
 
 There are two widely accepted solutions to this problem:
 
@@ -18,11 +18,11 @@ There are two widely accepted solutions to this problem:
 
 I [whipped up a quick example](https://github.com/kaushikgopal/RxJava-Android-Samples#rotation-persist) on [github](https://github.com/kaushikgopal/RxJava-Android-Samples) to demonstrate the second technique (which is generally my choice of poison). Now I've used the technique of worker fragments (successfully) a bunch of times before so I was a little surprised to see the example not work.
 
-Let's go over the usecase again: 
+Let's go over the use case again: 
 
 You have an observable that executes a long running network call. Before the call completes, you perform an activity rotation. After the activity is recreated, you continue the network call from where it left off or just use the result if it completes before your activity recreation process. 
 
-Instead of simulating this network call usecase I decided to just fake it with a "hot" observable instead (which makes the usecase a tad bit different but would help demonstrate the solution equally well. If you're looking for a quick simple example that demonstrates the difference between a hot and cold observable, I strongly recommend watching this [egghead.io video on the subject](https://egghead.io/lessons/rxjs-demystifying-cold-and-hot-observables-in-rxjs).
+Instead of simulating this network call use case I decided to just fake it with a "hot" observable instead (which makes the use case a tad bit different but would help demonstrate the solution equally well). If you're looking for a quick simple example that demonstrates the difference between a hot and cold observable, I strongly recommend watching this [egghead.io video on the subject](https://egghead.io/lessons/rxjs-demystifying-cold-and-hot-observables-in-rxjs).
 
 In fact, I used the exact same concoction of operators for my example:
 
