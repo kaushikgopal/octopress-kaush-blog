@@ -103,7 +103,7 @@
 .post-meta {
     margin-top: 0;
     padding: 0;
-    text-align: center;
+    text-align: left;
 }
 
 @include media-query($on-tablet) {
@@ -119,6 +119,9 @@
     }
     .post-link-index {
         font-size: 0.65em;
+    }
+    .post-meta {
+        text-align: center;
     }
 }
 
