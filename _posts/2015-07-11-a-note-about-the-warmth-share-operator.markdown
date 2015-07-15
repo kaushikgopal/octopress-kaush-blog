@@ -1,6 +1,6 @@
 ---
 layout: post
-title: A note about the warmth of the share operator
+title: A note about the warmth of the share and replay operators
 date: 2015-07-11T14:27:42-07:00
 categories:
 - dev
@@ -18,9 +18,9 @@ There are two widely accepted solutions to this problem:
 
 I [whipped up a quick example](https://github.com/kaushikgopal/RxJava-Android-Samples#rotation-persist) on [github](https://github.com/kaushikgopal/RxJava-Android-Samples) to demonstrate the second technique (which is generally my choice of poison). Now I've used the technique of worker fragments (successfully) a bunch of times before so I was a little surprised to see the example not work.
 
-Let's go over the use case again: 
+Let's go over the use case again:
 
-You have an observable that executes a long running network call. Before the call completes, you perform an activity rotation. After the activity is recreated, you continue the network call from where it left off or just use the result if it completes before your activity recreation process. 
+You have an observable that executes a long running network call. Before the call completes, you perform an activity rotation. After the activity is recreated, you continue the network call from where it left off or just use the result if it completes before your activity recreation process.
 
 Instead of simulating this network call use case I decided to just fake it with a "hot" observable instead (which makes the use case a tad bit different but would help demonstrate the solution equally well). If you're looking for a quick simple example that demonstrates the difference between a hot and cold observable, I strongly recommend watching this [egghead.io video on the subject](https://egghead.io/lessons/rxjs-demystifying-cold-and-hot-observables-in-rxjs).
 
@@ -38,7 +38,7 @@ But owing to the activity recreation, what really happens is that the first subs
 
 ![share marble diag 2](/images/marble_diag_share_2.jpg "Marble Diagram share 2")
 
-Notice that re-subscription? That changes things a little. 
+Notice that re-subscription? That changes things a little.
 
 ![share marble diag 3](/images/marble_diag_share_3.jpg "Marble Diagram share 3")
 
