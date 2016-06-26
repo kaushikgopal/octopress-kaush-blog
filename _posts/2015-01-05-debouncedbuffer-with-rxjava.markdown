@@ -1,18 +1,9 @@
 ---
+date: 2015-01-05 07:02
 layout: post
 title: DebouncedBuffer With RxJava
-date: 2015-01-05 07:02
 categories: android RxJava
 ---
-
---------------------------------------
-<br />
-Originally posted this article on the [Wedding Party tech blog](nerds.weddingpartyapp.com).
-
---------------------------------------
-
-<br />
-
 
 This is a bonus RxJava post that I landed up writing along with my [previous post on creating an event bus with RxJava](http://blog.kaush.co/2014/06/20/implementing-an-event-bus-with-rxjava-rxbus). If you went through the [code in the actual repo](https://github.com/kaushikgopal/Android-RxJava/tree/master/app/src/main/java/com/morihacky/android/rxjava/rxbus) you would have noticed more than one version of the bottom fragment in the RxBus demo.
 
