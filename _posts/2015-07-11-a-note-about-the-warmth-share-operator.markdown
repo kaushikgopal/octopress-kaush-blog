@@ -56,7 +56,7 @@ Clever but very hacky[^2]. Think carefully before you write code like this in pr
 
 ## Epilogue (Part 2):
 
-[@fabioCollini](https://twitter.com/fabioCollini/status/620664072770592768) on twitter said he preferred a replay().connect() approach over the publish().refcount() one which is [what the share operator really is](nerds.weddingpartyapp.com/tech/2015/01/21/rxjava-share-publish-refcount-and-all-that-jazz/).
+[@fabioCollini](https://twitter.com/fabioCollini/status/620664072770592768) on twitter said he preferred a replay().connect() approach over the publish().refcount() one which is [what the share operator really is](http://blog.kaush.co/2015/01/21/rxjava-tip-for-the-day-share-publish-refcount-and-all-that-jazz/).
 
 This reminded me of a tip that [Dan](https://twitter.com/danlew42) mentioned once, replay is similar to share in that it’s hot to the first subscriber and cold to every other subscriber after the first item emits[^3].
 

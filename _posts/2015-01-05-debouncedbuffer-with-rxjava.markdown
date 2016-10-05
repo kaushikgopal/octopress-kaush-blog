@@ -59,8 +59,8 @@ Altogether now:
 
 {% gist 76a6b4c97a193a7461e0b84485913c5e %}
 
-Notice the `.share()` operator? In [my next post](http://nerds.weddingpartyapp.com/tech/2013/01/21/rxjava-share-publish-refcount-and-all-that-jazz/), I'll go into the details of that operator along with `.publish()` and `refcount()`.
+Notice the `.share()` operator? In [my next post](http://blog.kaush.co/2015/01/21/rxjava-tip-for-the-day-share-publish-refcount-and-all-that-jazz/), I'll go into the details of that operator along with `.publish()` and `refcount()`.
 
-*[UPDATE: [Ben pointed](https://twitter.com/benjchristensen/status/552709457856049152) me to a [niftier implementation of debounced buffer](https://gist.github.com/benjchristensen/e4524a308456f3c21c0b). I've added a [third variant of the Bottom fragment](https://github.com/kaushikgopal/Android-RxJava/blob/master/app/src/main/java/com/morihacky/android/rxjava/rxbus/RxBusDemo_Bottom3Fragment.java) that uses this approach. A [subsequent post](http://nerds.weddingpartyapp.com/tech/2013/01/21/rxjava-share-publish-refcount-and-all-that-jazz/) will go into the details.]*
+*[UPDATE: [Ben pointed](https://twitter.com/benjchristensen/status/552709457856049152) me to a [niftier implementation of debounced buffer](https://gist.github.com/benjchristensen/e4524a308456f3c21c0b). I've added a [third variant of the Bottom fragment](https://github.com/kaushikgopal/Android-RxJava/blob/master/app/src/main/java/com/morihacky/android/rxjava/rxbus/RxBusDemo_Bottom3Fragment.java) that uses this approach. A [subsequent post](http://blog.kaush.co/2015/01/21/rxjava-tip-for-the-day-share-publish-refcount-and-all-that-jazz/) will go into the details.]*
 
 _Follow discussion on [Reddit](http://www.reddit.com/r/androiddev/comments/2rffd2/debouncedbuffer_with_rxjava/)._

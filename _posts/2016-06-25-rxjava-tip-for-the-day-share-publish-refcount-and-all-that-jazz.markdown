@@ -14,7 +14,7 @@ Originally posted this article on the [Wedding Party tech blog](nerds.weddingpar
 <br />
 
 
-Ok, so in [my previous post](http://nerds.weddingpartyapp.com/tech/2015/01/05/debouncedbuffer-used-in-rxbus-example/) I innocuously introduced the `.share()` operator.
+Ok, so in [my previous post](http://blog.kaush.co/2015/01/05/debouncedbuffer-with-rxjava/) I innocuously introduced the `.share()` operator.
 
     Observable<Object> tapEventEmitter = _rxBus.toObserverable().share();
 
