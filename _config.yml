@@ -7,7 +7,8 @@ gems:
   # - octopress-codefence
 
 # Site settings
-title: kaushik gopal's blog
+title: blog
+title-suffix: kaush.co
 email: iam@kaush.co
 description: > # this means to ignore newlines until "baseurl:"
   Curated thoughts on various topics like programming, technology, music, life and personal stuff from Kaushik Gopal.
