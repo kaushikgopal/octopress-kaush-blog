@@ -16,7 +16,12 @@
         }
 
         .site-title {
-            &:hover { text-decoration: none; }
+            color: $color-text;
+            font-weight: bold;
+            &:hover {
+              color: $color-link;
+              text-decoration: underline;
+            }
         }
     }
 }
@@ -90,6 +95,9 @@
 
     .linklog {
         color: $color-contrast;
+        &:hover {
+          color: $color-link;
+        }
     }
 }
 
@@ -138,12 +146,19 @@
         float:left;
 
         .post-title {
-            color: $color-link;
             // letter-spacing: -1px;
-            font-weight: normal;
             margin-bottom: 0;
             font-size: 28px;
             font-family: $font-family-base;
+
+            .article-link  {
+              color: $color-text;
+              font-weight: bold;
+              &:hover {
+                color: $color-link;
+                text-decoration: underline;
+              }
+            }
 
             @include media-query($on-mobile) {
                 text-align: center;
@@ -157,8 +172,8 @@
 .post-content {
     clear: left;
     margin-bottom: $spacing-unit;
-    font-size: 20px;
-    line-height: 1.3;
+    font-size: 18px;
+    line-height: 1.4;
 
     @include media-query($on-mobile) {
         font-size: 14px;
