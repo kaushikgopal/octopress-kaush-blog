@@ -5,13 +5,8 @@ date: 2014-09-15 08:29
 categories: android RxJava
 ---
 
---------------------------------------
-<br />
-Originally posted this article on the [Wedding Party tech blog](nerds.weddingpartyapp.com).
-
---------------------------------------
-
-<br />
+_Originally posted this article on the Wedding Party tech blog._
+<hr />
 
 
 I've read and watched a lot on Rx. Most examples either use the J8 lambda notations/Scala/Groovy or some other awesome language that us Android developers are constantly envious of.

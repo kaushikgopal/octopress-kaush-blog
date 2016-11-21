@@ -5,13 +5,8 @@ date: 2014-12-24 18:43
 categories: android RxJava
 ---
 
---------------------------------------
-<br />
-Originally posted this article on the [Wedding Party tech blog](nerds.weddingpartyapp.com).
-
---------------------------------------
-
-<br />
+_Originally posted this article on the Wedding Party tech blog._
+<hr />
 
 This post has three parts:
 
