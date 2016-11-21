@@ -24,7 +24,4 @@ If you don't know anything about RxJava, I would strongly recommend you first ge
 
 Once you have a decent understanding of when to use RxJava and the different terms used, come back to the [learning RxJava by example repo](https://github.com/kaushikgopal/Android-RxJava) and you'll find the examples a godsend. If not, [contribute](https://github.com/kaushikgopal/Android-RxJava#contributing) with the examples you think that will be.
 
-
 _Follow the discussion on [Reddit](http://www.reddit.com/r/androiddev/comments/2gi7ik/learning_rxjava_with_android_by_example/) or [Google Plus](https://plus.google.com/106712246601366256750/posts/7bMbnsit91A)_.
-
-<div class="marketing">If you can spend all day chatting with people on topics like these, <a href=" http://weddingpartyapp.com/jobs">we're hiring Android engineers</a>!</div>
