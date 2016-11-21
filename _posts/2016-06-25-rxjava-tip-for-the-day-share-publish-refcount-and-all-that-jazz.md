@@ -5,8 +5,7 @@ date: 2015-01-21 10:41
 categories: android RxJava
 ---
 
-_Originally posted this article on the Wedding Party tech blog._
-<hr />
+<div class="sidenote">Originally posted this article on the Wedding Party tech blog</div>
 
 
 Ok, so in [my previous post](http://blog.kaush.co/2015/01/05/debouncedbuffer-with-rxjava/) I innocuously introduced the `.share()` operator.

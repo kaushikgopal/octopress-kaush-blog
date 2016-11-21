@@ -5,8 +5,7 @@ date: 2014-06-20 04:00
 categories: android java
 ---
 
-_Originally posted this article on the Wedding Party tech blog._
-<hr />
+<div class="sidenote">Originally posted this article on the Wedding Party tech blog</div>
 
 Mobile devices are getting pretty fast, but they aren't infinitely fast yet. If you want your app to be able to do any serious work without affecting the user experience by locking up the interface, you'll have to resort to running things in parallel. On Android, this is done with "threads".
 

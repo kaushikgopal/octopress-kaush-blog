@@ -219,6 +219,19 @@ blockquote {
     }
 }
 
+/* sidenote
+================================================== */
+
+.sidenote {
+    width: 100%;
+
+    padding-bottom: 1em;
+    margin-bottom: 1.5em;
+    border-bottom: 1px solid $grey-color;
+
+    font-style: italic;
+    color: lighten($color-text, 40%);
+}
 
 /* footnotes
 ================================================== */
