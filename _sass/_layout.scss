@@ -150,10 +150,10 @@
             margin-bottom: 0;
             font-size: 28px;
             font-family: $font-family-base;
+            font-weight: bold;
 
             .article-link  {
               color: $color-text;
-              font-weight: bold;
               &:hover {
                 color: $color-link;
                 text-decoration: underline;
