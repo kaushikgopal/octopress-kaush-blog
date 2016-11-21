@@ -36,19 +36,21 @@ What I really needed was a selective combination of debounce and buffer - a "deb
 
 Essentially, if you pass an observable as a parameter to `buffer`, every time this observable emits an item, `buffer` will take the source observable and emit a *list* of items from the *source* observable (instead of the items emitted by the boundary observable).
 
-
-    <Source Observable For Actual Events>.buffer(<Boundary Observable that only tells "when" to take items from the Source>)
-
+{% codeblock lang:java linenos:false %}
+<Source Observable For Actual Events>.buffer(<Boundary Observable that only tells "when" to take items from the Source>)
+{% endcodeblock %}
 
 So what we're going to do is use a "debouncedEventEmitter" as our boundary observable. The "debouncedEventEmitter" will basically emit a single item-which we really don't care about-only after a certain time has elapsed from the emission of the first item.
 
-
-    Observable<Object> debouncedEventEmitter = tapEventEmitter.debounce(1, TimeUnit.SECONDS);
-
+{% codeblock lang:java linenos:false %}
+Observable<Object> debouncedEventEmitter = tapEventEmitter.debounce(1, TimeUnit.SECONDS);
+{% endcodeblock %}
 
 We now buffer our source observable again to give us a list of items (vs a single item) everytime the debouncedEventEmitter emits a single item.
 
-    Observable<List<Object>> debouncedBufferEmitter = tapEventEmitter.buffer(debouncedEventEmitter);
+{% codeblock lang:java linenos:false %}
+Observable<List<Object>> debouncedBufferEmitter = tapEventEmitter.buffer(debouncedEventEmitter);
+{% endcodeblock %}
 
 Altogether now:
 

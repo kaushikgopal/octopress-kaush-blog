@@ -200,9 +200,23 @@
     }
 }
 
+
+/**
+ * Blockquotes
+ */
 blockquote {
-    letter-spacing: 0;
-    font-weight: bold;
+    background: $grey-color-light;
+    border-left: 4px solid $grey-color-dark;
+    padding-left: $spacing-unit / 2;
+    padding-top: $spacing-unit / 3;
+    padding-bottom: $spacing-unit / 3;
+    font-size: 18px;
+    font-style: italic;
+    color: lighten($color-text, 30%);
+
+    > :last-child {
+        margin-bottom: 0;
+    }
 }
 
 
@@ -224,6 +238,25 @@ blockquote {
 
 /* Code snippets
 ================================================== */
+
+pre,
+code {
+    font-size: 15px;
+    border: 1px solid $grey-color-light;
+    border-radius: 3px;
+    background-color: #eef;
+}
+
+pre {
+    padding: 8px 12px;
+    overflow-x: scroll;
+
+    > code {
+        border: 0;
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
 
 .code-highlight-caption {
     font-family: $font-family-base !important;

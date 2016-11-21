@@ -11,7 +11,9 @@ _Originally posted this article on the Wedding Party tech blog._
 
 Ok, so in [my previous post](http://blog.kaush.co/2015/01/05/debouncedbuffer-with-rxjava/) I innocuously introduced the `.share()` operator.
 
-    Observable<Object> tapEventEmitter = _rxBus.toObserverable().share();
+{% codeblock lang:java linenos:false %}
+Observable<Object> tapEventEmitter = _rxBus.toObserverable().share();
+{% endcodeblock %}
 
 ## What is this share operator?
 
