@@ -13,3 +13,7 @@ permalink: /presentations/
 
 * Aug 28: [(Droidcon NYC 2015) Painless UI Testing](https://www.youtube.com/watch?v=ZzXN6iV26wg) [[slides](https://speakerdeck.com/kaushikgopal/painless-ui-testing)]
 * Jun 04: [(SF Android Meetup) Learning Rx by Example : Part 1](https://www.youtube.com/watch?v=k3D0cWyNno4) [[slides](https://speakerdeck.com/kaushikgopal/learning-rxjava-for-android-by-example)]
+
+<hr />
+
+* [Fragmented episodes](http://fragmentedpodcast.com/episodes/all/)
