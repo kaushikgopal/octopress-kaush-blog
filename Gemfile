@@ -19,4 +19,5 @@ group :jekyll_plugins do
     gem "octopress-littlefoot"
     gem "octopress-solarized"
     gem "octopress-tag-helpers"
+    gem "octopress-codeblock"
 end
