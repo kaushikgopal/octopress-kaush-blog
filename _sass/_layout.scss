@@ -18,10 +18,16 @@
         .site-title {
             color: $color-text;
             font-weight: bold;
+
+            .blog {
+                color: $color-link;
+            }
+
             &:hover {
               color: $color-link;
               text-decoration: underline;
             }
+
         }
     }
 }
@@ -172,7 +178,7 @@
 .post-content {
     clear: left;
     margin-bottom: $spacing-unit;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.4;
 
     @include media-query($on-mobile) {
