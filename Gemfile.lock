@@ -65,6 +65,8 @@ GEM
     octopress-code-highlighter (4.2.6)
       colorator (~> 0.1)
       octopress-hooks
+    octopress-codeblock (1.0.5)
+      octopress-code-highlighter (~> 4.2)
     octopress-date-format (3.0.3)
       jekyll (>= 2.0)
     octopress-deploy (1.3.0)
@@ -104,7 +106,6 @@ GEM
     parslet (1.5.0)
       blankslate (~> 2.0)
     posix-spawn (0.3.11)
-    psych (2.0.3)
     pygments.rb (0.6.3)
       posix-spawn (~> 0.3.6)
       yajl-ruby (~> 1.2.0)
@@ -130,10 +131,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  jekyll (= 2.5.3)
-  octopress (= 3.0.2)
+  jekyll
+  octopress (~> 3.0)
   octopress-autoprefixer
   octopress-code-highlighter
+  octopress-codeblock
   octopress-date-format
   octopress-deploy
   octopress-escape-code
@@ -146,7 +148,6 @@ DEPENDENCIES
   octopress-littlefoot
   octopress-solarized
   octopress-tag-helpers
-  psych (= 2.0.3)
 
 BUNDLED WITH
    1.12.5
