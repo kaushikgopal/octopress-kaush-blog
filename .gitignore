@@ -4,3 +4,5 @@ _deploy.yml
 .ink-cache
 .code-highlighter-cache
 .gist-cache
+
+.idea/*
