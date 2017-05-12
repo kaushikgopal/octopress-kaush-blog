@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Making sense of the RxJava 1 -> RxJava 2 migration
+title: Understanding the RxJava 2 migration for RxJava 1 devs
 date: 2017-04-08 16:20
 comments: false
-published: false
+published: true
 ---
 
 In case you haven't heard: [RxJava2](https://github.com/ReactiveX/RxJava/wiki/What%27s-different-in-2.0https://github.com/ReactiveX/RxJava/wiki/What%27s-different-in-2.0) was released sometime back. RxJava 2 was a massive rewrite with  breaking apis. But it was a good thing and most dependent libraries have upgraded by now, so you're safe to pull that migration trigger with your respective codebases. 
@@ -210,6 +210,10 @@ Processor = Subject + backpressure handling.
 * The equivalent variants (AsyncProcessor, BehaviorProcessor, PublishProcessor, ReplayProcessor etc.) all exist.
 * Did you know there was this Subject called a [UnicastSubject](http://reactivex.io/RxJava/javadoc/rx/subjects/UnicastSubject.html)?
 
+note:
+ mDateSubject.asObservable();
+mDateSubject.cast(Date.class);
+
 # Operators
 
 ## Observable.from has become more specific
@@ -290,8 +294,23 @@ The complete rewrite of 2.x improved our memory consumption and performance cons
 https://twitter.com/akarnokd/status/752465265091309568
 https://github.com/akarnokd/akarnokd-misc/tree/master/src/jmh/java/hu/akarnokd/comparison/scrabble
 
+# No more null in your streams
 
+* Nulls ain't allowed, this can potentially be painful. See this discussoin https://github.com/ReactiveX/RxJava/issues/4644. I personally am a fan of this choice though.
 
+This is mildly controversial. 
+
+I used to do a whole bunch of Observable<Void> in my early days, this came to bite me here. cause you basically can't ever allow a null object in your stream
+
+Observable.fromCallable({
+    return null;
+});
+
+you want to change these to something like this from hereon:
+
+Completable.fromAction(() -> {
+   // no return necessary
+});
 
 # Miscellaneous thoughts:
 
