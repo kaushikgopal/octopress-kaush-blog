@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Understanding the RxJava 2 migration for RxJava 1 devs
+title: RxJava 2 for the RxJava 1 luddites
 date: 2017-04-08 16:20
 comments: false
 published: true
@@ -141,15 +141,15 @@ Jedi master Karnok explains this best in the wiki:
 
 > In RxJava 1.x, the interface rx.Subscription was responsible for stream and resource lifecycle management, namely unsubscribing a sequence and releasing general resources such as scheduled tasks. The Reactive-Streams specification took this name for specifying an interaction point between a source and a consumer: org.reactivestreams.Subscription allows requesting a positive amount from the upstream and allows cancelling the sequence.
 
-From that definition alone, it would appear like nothing's changed, but is not the case. Early on, I pointed out 
+From that definition alone, it would appear like nothing's changed, but that is definitely not the case. Early on, I pointed out 
 
 `Publisher.subscribe(Subscriber) => Subscription`
 
-The use of `=>` vs `=` was intentional. If you look at the [source code for `Publisher`'s subscribe method](https://github.com/reactive-streams/reactive-streams-jvm/blob/v1.0.0/api/src/main/java/org/reactivestreams/Publisher.java#L28), you'll notice a return type of void viz. it doesn't return a Subscription for you to tack on to a CompositeSubscription, that you can conveniently dispose off onStop/onDestroy.
+The use of `=>` vs `=` was intentional. If you look at the [source code for `Publisher`'s subscribe method](https://github.com/reactive-streams/reactive-streams-jvm/blob/v1.0.0/api/src/main/java/org/reactivestreams/Publisher.java#L28), you'll notice a return type of void viz. it doesn't return a Subscription for you to tack on to a CompositeSubscription (which you can then conveniently dispose off onStop/onDestroy).
 
 > Because Reactive-Streams base interface, org.reactivestreams.Publisher defines the subscribe() method as void, Flowable.subscribe(Subscriber) no longer returns any Subscription (or Disposable). The other base reactive types also follow this signature with their respective subscriber types.
 
-So you may ask how do I get a hold off that Subscription (so that you might rightly cancel or dispose it off like a responsible citizen)? Have a look at the [source code for `Subscriber`'s onSubscribe](https://github.com/reactive-streams/reactive-streams-jvm/blob/v1.0.0/api/src/main/java/org/reactivestreams/Subscriber.java#L31): you are now given the Subscription class as a parameter on your callback:
+So you may ask how do I get a hold off that Subscription then (so that you might rightly cancel or dispose it off like a responsible citizen)? Have a look at the [source code for `Subscriber`'s onSubscribe](https://github.com/reactive-streams/reactive-streams-jvm/blob/v1.0.0/api/src/main/java/org/reactivestreams/Subscriber.java#L31):
 
     public interface Subscriber<T> {
   
@@ -164,9 +164,9 @@ So you may ask how do I get a hold off that Subscription (so that you might righ
         public void onComplete();
     }
 
-You can then conveniently dispose off the Subscription inside the `onSubscribe` callback. This was actually a pretty well thought off change because this really makes the interface for a Subscriber lightweight. In RxJava 1 land, Subscribers were more heavy cause they had to deal with a lot of the internal state handling.  
+You are now given the Subscription class as a parameter in your onSubscribe callback. You can then conveniently dispose off the Subscription inside the `onSubscribe` callback. This was actually a pretty well thought off change because this really makes the interface for a Subscriber lightweight. In RxJava 1 land, Subscribers were more heavy cause they had to deal with a lot of the internal state handling.  
 
-... who are we kidding: that is not convenient at all (for us lifecycle dependents). I'd rather just shove everything into a CompositeSubscription like before and be on my merry way. But such are the definitions of the Reactive Streams spec. 
+... who are we kidding: that is not convenient at all (for us lifecycle dependents). I'd rather just shove everything into a CompositeSubscription like before and be on my merry way. But such are the rulings of the Reactive Streams spec. 
 
 Thankfully the maintainers of RxJava in all their benevolence realized this trade-off and have remedied this with convenient helpers. But first, some more definitions:
 
@@ -183,7 +183,7 @@ So if `Disposable`s is what we're using now, by that token we have a super charg
 
 If you were following closely though, you'd still ask the question? ok... but how does that make it anymore convenient? `Publisher.subscribe(Subscriber)` still doesn't return a Disposable/Subscription for us to tack on to the CompositeDisposable.
 
-That's why the maintainers added a handly method on most Publishers called `subscribeWith`. From the wiki:
+That's why the RxJava maintainers added a handy method on most Publishers called `subscribeWith`. From the wiki:
 
 > Due to the Reactive-Streams specification, Publisher.subscribe returns void and the pattern by itself no longer works in 2.0. To remedy this, the method E subscribeWith(E subscriber) has been added to each base reactive class which returns its input subscriber/observer as is. 
 
@@ -193,7 +193,10 @@ Well.. it says that the `Subscriber` you pass is sent back to you with `subscrib
 
 RxJava 2 conveniently provides you with some Subscriber helper classes that do this for you. We now have 
 
+* `DisposableSubscriber` - the one I recommend using when you can
+* `ResourceSubscriber` - 
 
+Other versions also exist like `DefaultSubscriber` and `FlowableSubscriber` but those don't implement the Disposable interface.
 
 * `Processor`s do not return a `Disposable`/`Subscription` anymore. So disposing the connection is done a tad bit differently 
 
@@ -215,6 +218,11 @@ note:
 mDateSubject.cast(Date.class);
 
 # Operators
+
+## Observable.create unsafeCreate
+ 
+ this is a win
+
 
 ## Observable.from has become more specific
 
@@ -319,6 +327,10 @@ Completable.fromAction(() -> {
 https://medium.com/@theMikhail/rxjava2-an-early-preview-5b05de46b07
 
 * `TestSubject`s are dead. But you should be using [`TestScheduler`s and `TestSubscriber`s](https://github.com/Froussios/Intro-To-RxJava/blob/master/Part%204%20-%20Concurrency/2.%20Testing%20Rx.md) anyway :point_left: great resource on testing Rx btw.
+
+Testing is now super easy.
+
+
 * The previous marble diagrams and docs that we've come to love haven't all been updated yet, so [keep these javadocs handy](http://reactivex.io/RxJava/2.x/javadoc/) when you start
 * If you did the due diligence of migrating to retrolambda, the search-replacing during this migration is significantly reduced
 
