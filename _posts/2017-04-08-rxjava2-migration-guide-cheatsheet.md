@@ -302,6 +302,16 @@ This is mildly controversial.
 
 I used to do a whole bunch of Observable<Void> in my early days, this came to bite me here. cause you basically can't ever allow a null object in your stream
 
+Observable.fromCallable({
+    return null;
+});
+
+you want to change these to something like this from hereon:
+
+Completable.fromAction(() -> {
+   // no return necessary
+});
+
 # Miscellaneous thoughts:
 
 
