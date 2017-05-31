@@ -4,5 +4,5 @@ _deploy.yml
 .ink-cache
 .code-highlighter-cache
 .gist-cache
-
+.DS_Store
 .idea/*

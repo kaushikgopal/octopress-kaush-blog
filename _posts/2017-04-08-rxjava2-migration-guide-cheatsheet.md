@@ -3,7 +3,7 @@ layout: post
 title: RxJava 2 for the RxJava 1 luddites
 date: 2017-04-08 16:20
 comments: false
-published: true
+published: false
 ---
 
 In case you haven't heard: [RxJava2](https://github.com/ReactiveX/RxJava/wiki/What%27s-different-in-2.0https://github.com/ReactiveX/RxJava/wiki/What%27s-different-in-2.0) was released sometime back. RxJava 2 was a massive rewrite with  breaking apis. But it was a good thing and most dependent libraries have upgraded by now, so you're safe to pull that migration trigger with your respective codebases. 
