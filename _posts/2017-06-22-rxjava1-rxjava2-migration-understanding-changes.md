@@ -10,8 +10,8 @@ _Folks starting out directly with Rx2 might enjoy this guide but it's the ones t
 
 I've split this guide into 3 parts:
 
-1. Understanding the changes
-2. Disposing subscriptions
+1. [Understanding the changes](http://blog.kaush.co/2017/06/21/rxjava1-rxjava2-migration-understanding-changes/)
+2. [Disposing subscriptions](http://blog.kaush.co/2017/06/21/rxjava-1-rxjava-2-disposing-subscriptions/)
 3. Miscellaneous changes
 
 Let's get started.
@@ -138,4 +138,4 @@ On the publishing side, instead of implementing the standard "Publisher" interfa
 
 Notice: instead of having the standard `Subscriber` (Reactive Streams standard) the other base reactive classes (`Observable`, `Single` etc.) now have corresponding "special" Rx specific `Subscriber` or event listeners called "Observer"s.
 
-That's it for Part 1. In the next part, we'll look at disposing subscriptions.
+That's it for Part 1. In the [next part](http://blog.kaush.co/2017/06/21/rxjava-1-rxjava-2-disposing-subscriptions/), we'll look at disposing subscriptions.

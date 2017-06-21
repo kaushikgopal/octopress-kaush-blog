@@ -6,8 +6,8 @@ date: 2017-06-21T13:09:54-07:00
 
 This is a continuation post in a 3 part series:
 
-1. Understanding the changes
-2. Disposing subscriptions
+1. [Understanding the changes](http://blog.kaush.co/2017/06/21/rxjava1-rxjava2-migration-understanding-changes/)
+2. [Disposing subscriptions](http://blog.kaush.co/2017/06/21/rxjava-1-rxjava-2-disposing-subscriptions/)
 3. Miscellaneous changes
 
 
