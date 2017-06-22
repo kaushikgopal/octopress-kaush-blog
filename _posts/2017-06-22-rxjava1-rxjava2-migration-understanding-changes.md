@@ -38,6 +38,7 @@ If you're more curious about the design and goals, I also suggest the following 
 * [What's different in 2.0](https://github.com/ReactiveX/RxJava/wiki/What%27s-different-in-2.0)  wiki page - this is really the place I kept coming back to and referencing when I needed to understand the details
 * [Fragmented Ep #53 with JakeWharton](http://fragmentedpodcast.com/episodes/053-jake-wharton-on-rxjava-2/) (forgive the shameless promotion) - ultimate lazy person's guide to understand why/what things changed with RxJava2, as explained by an actual demigod. This was the one that really made it first click for me.
 * [Thought process behind the 2.0 design](https://github.com/ReactiveX/RxJava/issues/2787) for the truly loyal
+* [Ep 11 of The Context ](https://github.com/artem-zinnatullin/TheContext-Podcast/blob/master/show_notes/Episode_11.md) —  by my friends Hannes and Artem :)
 <!-- * [Exploring RxJava2 for Android](https://youtu.be/htIXKI5gOQU?t=14m49s) - if you'd rather "see" said demigod, check this video out. I would start at the 14:50 mark. --> 
 
 ________________________
