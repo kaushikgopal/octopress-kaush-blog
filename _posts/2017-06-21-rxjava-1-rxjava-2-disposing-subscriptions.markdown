@@ -20,11 +20,11 @@ Jedi master Karnok explains this best in the wiki:
 
 > In RxJava 1.x, the interface rx.Subscription was responsible for stream and resource lifecycle management, namely unsubscribing a sequence and releasing general resources such as scheduled tasks. The Reactive-Streams specification took this name for specifying an interaction point between a source and a consumer: org.reactivestreams.Subscription allows requesting a positive amount from the upstream and allows cancelling the sequence.
 
-From that definition alone, it would appear like nothing's changed, but that is definitely not the case. In my first post, I pointed out:
+From that definition alone, it would appear like nothing's changed but that is definitely not the case. In my first post, I pointed out:
 
-`Publisher.subscribe(Subscriber) => Subscription`
+    Publisher.subscribe(Subscriber) => Subscription
 
-The use of `=>` vs `=` was intentional. If you look at the [source code for `Publisher`'s subscribe method](https://github.com/reactive-streams/reactive-streams-jvm/blob/v1.0.0/api/src/main/java/org/reactivestreams/Publisher.java#L28) again, you'll notice a return type of `void` viz. it doesn't return a Subscription for you to tack on to a CompositeSubscription (which you can then conveniently dispose off onStop/onDestroy).
+The use of => vs = was intentional. If you look at the [source code for `Publisher`'s subscribe method](https://github.com/reactive-streams/reactive-streams-jvm/blob/v1.0.0/api/src/main/java/org/reactivestreams/Publisher.java#L28) again, you'll notice a return type of `void` viz. it doesn't return a Subscription for you to tack on to a CompositeSubscription (which you can then conveniently dispose off onStop/onDestroy).
 
     interface Publisher<T> {
         // return type void (not Subscription like before)
@@ -63,7 +63,7 @@ Notice the return type `void` in all of them.
 
 So you may ask how do I get a hold off that Subscription then (so that you might rightly cancel or dispose it off like a responsible citizen)? 
 
-Let's take a look at the [declaration code for `Subscriber`'s onSubscribe](https://github.com/reactive-streams/reactive-streams-jvm/blob/v1.0.0/api/src/main/java/org/reactivestreams/Subscriber.java#L31) method:
+Let's take a look at the [the `Subscriber`'s onSubscribe](https://github.com/reactive-streams/reactive-streams-jvm/blob/v1.0.0/api/src/main/java/org/reactivestreams/Subscriber.java#L31) method:
 
     public interface Subscriber<T> {
   
@@ -78,7 +78,7 @@ Let's take a look at the [declaration code for `Subscriber`'s onSubscribe](https
         public void onComplete();
     }
 
-You are now given the Subscription class as a parameter in your onSubscribe callback. So within the OnSubscribe method, you have a hold of the subscription and can then conveniently dispose off the Subscription inside the `onSubscribe` callback. 
+You are now given the Subscription class as a parameter in your `onSubscribe` callback. So within the OnSubscribe method, you have a hold of the subscription and can then conveniently dispose off the Subscription inside the `onSubscribe` callback. 
 
 This was actually a pretty well thought off change because this really makes the interface for a Subscriber lightweight. In RxJava 1 land, Subscribers were more "heavy" cause they had to deal with a lot of the internal state handling.  
 
@@ -92,24 +92,24 @@ But first, some more definitions:
 
 What we called `Subscription` in RxJava 1 is now called `Disposable`. 
 
-Why couldn't we just keep the name `Subscription`? (per my understanding):
+**Why couldn't we just keep the name `Subscription`? (per my understanding):**
 
 1. You have to remember the Reactive Streams spec already has this name reserved and the maintainers of RxJava 2 are serious about the spec adherence. We don't want confusion about there being more functionality with an Rx Subscription vs other Reactive Stream spec adhering libraries
 2. We still want some of the behaviors and conveniences of RxJava 1 like CompositeSubscriptions.
 
-So if `Disposable`s is what we're using now, by that token we have a `CompositeDisposable` which is the object you want to be using and tacking all your Disposables onto. It functions pretty similarly to how we used `CompositeSubscription` before. 
+So if Disposables is what we're using now, by that token we have a CompositeDisposable which is the object you want to be using and tacking all your Disposables onto. It functions pretty similarly to how we used CompositeSubscription before. 
 
 Ok, back to the original question: how do I get a hold of the Disposable?
 
 ## Getting hold of Disposables
 
 
-Now before we go any further, if you're adding your callbacks directly in the form of lambdas, this is not a problem as most observable sources return a Disposable with their `subscribe` method call when not provided with a subscriber object:
+Now before we go any further, if you're adding your callbacks directly in the form of lambdas, this is not a problem as most observable sources return a Disposable with their subscribe method call when not provided with a subscriber object:
 
-    Publisher.subscribe(Subscriber)
+    Flowable.subscribe(Subscriber)
     // void return type
 
-    Publisher.subscribe(nextEvent -> {}, error -> {}, () -> {})
+    Flowable.subscribe(nextEvent -> {}, error -> {}, () -> {})
     // return Disposable so we're good
 
 So if you look at some sample code, the below works fine no problem:
@@ -152,7 +152,7 @@ However if I rewrote that code just a little differently:
     // ^ THIS IS WRONG. Won't work        
     // compositeDisposable.add(disposable);
 
-The above code won't compile. If you want to pass a Subscriber object (like the above `FlowableSubscriber` or an `ObservableSource`) then this strategy won't work. 
+The above code won't compile. If you want to pass a Subscriber object (like the above `FlowableSubscriber`, `ObservableSource` or an `Observer`) then this strategy won't work. 
 
 A lot of existing RxJava 1 code uses this strategy a lot, so the RxJava maintainers very kindly added a handy method on most Publishers called `subscribeWith`. From the wiki:
 
@@ -180,9 +180,11 @@ Well... it says that the `Subscriber` you pass is sent back to you with `subscri
     
     compositeDisposable.add(disposable);
 
-Apart from `DisposableSubscriber`, there's also a `ResourceSubscriber` which implements Disposable (no idea why you would use one over the other). 
+Apart from `DisposableSubscriber`, there's also a `ResourceSubscriber` which implements Disposable. There's also a `DefaultSubscriber` which doesn't implement the Disposable interface, so you can't use it with `subscribeWith` (you could use it but you wouldn't get anything Disposable out of it). 
 
-There's also a `DefaultSubscriber` which doesn't implement the Disposable interface, so you can't use it with `subscribeWith`.
+It seems like both DisposableSubscriber and ResourceSubscriber do the same thing. Why do both of these exist you ask?
+
+The original 1.x Subscriber had the ability to take Subscriptions which allowed "disposing" the additional resources that particular Subscriber needed when the lifecycle ended or the Subscriber got unsubscribed. Since 2.x Subscriber is an interface declared externally, the old functionality had to be implemented via a separate abstract class: "ResourceSubscriber". A key difference is you can create and associate Disposable resources with it and dispose them together from within the onError() and onComplete() methods you implement. Have a look at the example from [within the docs](http://reactivex.io/RxJava/2.x/javadoc/io/reactivex/subscribers/ResourceSubscriber.html)
 
 # to .clear or to .dispose
 
@@ -193,3 +195,6 @@ There's no longer an `unsubscribe` call on CompositeDisposable. It's been rename
 unsubscribe/dispose [terminates even future subscriptions while clear doesn't](https://github.com/kaushikgopal/RxJava-Android-Samples/commit/1e7d4b2f867a97b32a0cde81cb488c3d17d4952f) allowing you to reuse the CompositeDisposable.
 
 In the next and final part, we'll look at some of the miscellaneous changes.
+
+
+_My thanks to Donn Felker & David Karnok for reviewing this post. Special thanks to David for correcting some of my misconceptions._
