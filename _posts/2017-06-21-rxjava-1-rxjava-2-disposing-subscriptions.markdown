@@ -188,7 +188,7 @@ The original 1.x Subscriber had the ability to take Subscriptions which allowed 
 
 # to .clear or to .dispose
 
-There's no longer an `unsubscribe` call on CompositeDisposable. It's been renamed to `dispose` ☝️️ but you don't want to be using either of those anyway. The `clear` method remains and is most likely the method you want to use. 
+There's no longer an `unsubscribe` call on CompositeDisposable. It's been renamed to `dispose` ☝️️ but you don't want to be using either of those anyway. The `clear` method remains, and is most likely the method you want to use. 
 
 ## What's the difference? 
 
