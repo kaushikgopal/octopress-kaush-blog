@@ -24,7 +24,7 @@ From that definition alone, it would appear like nothing's changed but that is d
 
     Publisher.subscribe(Subscriber) => Subscription
 
-The use of => vs = was intentional. If you look at the [source code for `Publisher`'s subscribe method](https://github.com/reactive-streams/reactive-streams-jvm/blob/v1.0.0/api/src/main/java/org/reactivestreams/Publisher.java#L28) again, you'll notice a return type of `void` viz. it doesn't return a Subscription for you to tack on to a CompositeSubscription (which you can then conveniently dispose off onStop/onDestroy).
+The use of => vs = was intentional. If you look at the [source code for `Publisher`'s subscribe method](https://github.com/reactive-streams/reactive-streams-jvm/blob/v1.0.0/api/src/main/java/org/reactivestreams/Publisher.java#L28) again, you'll notice a return type of `void` viz. it doesn't return a Subscription for you to tack on to a CompositeSubscription (which you can then conveniently dispose of onStop/onDestroy).
 
     interface Publisher<T> {
         // return type void (not Subscription like before)
@@ -78,7 +78,7 @@ Let's take a look at the [the `Subscriber`'s onSubscribe](https://github.com/rea
         public void onComplete();
     }
 
-You are now given the Subscription class as a parameter in your `onSubscribe` callback. So within the OnSubscribe method, you have a hold of the subscription and can then conveniently dispose off the Subscription inside the `onSubscribe` callback. 
+You are now given the Subscription class as a parameter in your `onSubscribe` callback. So within the OnSubscribe method, you have a hold of the subscription and can then conveniently dispose of the Subscription inside the `onSubscribe` callback. 
 
 This was actually a pretty well thought off change because this really makes the interface for a Subscriber lightweight. In RxJava 1 land, Subscribers were more "heavy" cause they had to deal with a lot of the internal state handling.  
 
@@ -180,7 +180,7 @@ Well... it says that the `Subscriber` you pass is sent back to you with `subscri
     
     compositeDisposable.add(disposable);
 
-Apart from `DisposableSubscriber`, there's also a `ResourceSubscriber` which implements Disposable. There's also a `DefaultSubscriber` which doesn't implement the Disposable interface, so you can't use it with `subscribeWith` (you could use it but you wouldn't get anything Disposable out of it). 
+Apart from `DisposableSubscriber`, there's also a `ResourceSubscriber` which implements Disposable. There's also a `DefaultSubscriber` which doesn't implement the Disposable interface, so you can't use it with `subscribeWith` (you could use it but you wouldn't get anything "disposable" out of it). 
 
 It seems like both DisposableSubscriber and ResourceSubscriber do the same thing. Why do both of these exist you ask?
 
