@@ -22,14 +22,18 @@ Jedi master Karnok explains this best in the wiki:
 
 From that definition alone, it would appear like nothing's changed but that is definitely not the case. In my first post, I pointed out:
 
-    Publisher.subscribe(Subscriber) => Subscription
+{% codeblock lang:java linenos:false %}
+Publisher.subscribe(Subscriber) => Subscription
+{% endcodeblock %}
 
 The use of => vs = was intentional. If you look at the [source code for `Publisher`'s subscribe method](https://github.com/reactive-streams/reactive-streams-jvm/blob/v1.0.0/api/src/main/java/org/reactivestreams/Publisher.java#L28) again, you'll notice a return type of `void` viz. it doesn't return a Subscription for you to tack on to a CompositeSubscription (which you can then conveniently dispose of onStop/onDestroy).
 
-    interface Publisher<T> {
-        // return type void (not Subscription like before)
-        void subscribe(Subscriber<? super T> s);
-    }
+{% codeblock lang:java linenos:false %}
+interface Publisher<T> {
+    // return type void (not Subscription like before)
+    void subscribe(Subscriber<? super T> s);
+}
+{% endcodeblock %}
 
 Karnok again:
 
@@ -37,25 +41,27 @@ Karnok again:
 
 So if you look at the declarations again
 
-    // RxJava specific constructs    
+{% codeblock lang:java linenos:false %}
+// RxJava specific constructs    
 
-    // Observable implements "ObservableSource"
-    interface ObservableSource<T> {
-        void subscribe(Observer<? super T> observer);
-    }
-    
-    // Single implements SingleSource
-    interface SingleSource<T> {
-        void subscribe(SingleObserver<? super T> observer);
-    }
-    
-    interface CompletableSource {
-        void subscribe(CompletableObserver observer);
-    }
-    
-    interface MaybeSource<T> {
-        void subscribe(MaybeObserver<? super T> observer);
-    }
+// Observable implements "ObservableSource"
+interface ObservableSource<T> {
+    void subscribe(Observer<? super T> observer);
+}
+
+// Single implements SingleSource
+interface SingleSource<T> {
+    void subscribe(SingleObserver<? super T> observer);
+}
+
+interface CompletableSource {
+    void subscribe(CompletableObserver observer);
+}
+
+interface MaybeSource<T> {
+    void subscribe(MaybeObserver<? super T> observer);
+}
+{% endcodeblock %}
 
 Notice the return type `void` in all of them.
 
@@ -65,18 +71,20 @@ So you may ask how do I get a hold off that Subscription then (so that you might
 
 Let's take a look at the [the `Subscriber`'s onSubscribe](https://github.com/reactive-streams/reactive-streams-jvm/blob/v1.0.0/api/src/main/java/org/reactivestreams/Subscriber.java#L31) method:
 
-    public interface Subscriber<T> {
-  
-        public void onSubscribe(Subscription s);
-      
-        // Subscriptions are additionally cool cause they have:
-        // s.request(n) -> request data
-        // s.cancel()   -> cancel this connection
-        
-        public void onNext(T t);
-        public void onError(Throwable t);
-        public void onComplete();
-    }
+{% codeblock lang:java linenos:false %}
+public interface Subscriber<T> {
+
+    public void onSubscribe(Subscription s);
+    
+    // Subscriptions are additionally cool cause they have:
+    // s.request(n) -> request data
+    // s.cancel()   -> cancel this connection
+    
+    public void onNext(T t);
+    public void onError(Throwable t);
+    public void onComplete();
+}
+{% endcodeblock %}
 
 You are now given the Subscription class as a parameter in your `onSubscribe` callback. So within the OnSubscribe method, you have a hold of the subscription and can then conveniently dispose of the Subscription inside the `onSubscribe` callback. 
 
@@ -106,51 +114,57 @@ Ok, back to the original question: how do I get a hold of the Disposable?
 
 Now before we go any further, if you're adding your callbacks directly in the form of lambdas, this is not a problem as most observable sources return a Disposable with their subscribe method call when not provided with a subscriber object:
 
-    Flowable.subscribe(Subscriber)
-    // void return type
+{% codeblock lang:java linenos:false %}
+Flowable.subscribe(Subscriber)
+// void return type
 
-    Flowable.subscribe(nextEvent -> {}, error -> {}, () -> {})
-    // return Disposable so we're good
+Flowable.subscribe(nextEvent -> {}, error -> {}, () -> {})
+// return Disposable so we're good
+{% endcodeblock %}
 
 So if you look at some sample code, the below works fine no problem:
 
-    disposable =
-        myAwesomeFlowable
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe(event -> {
-               // onNext
-            }, throwable -> {
-               // onError
-            }, () -> {
-                // onComplete
-            });
-    
-    compositeDisposable.add(disposable);
+{% codeblock lang:java linenos:false %}
+disposable =
+    myAwesomeFlowable
+        .observeOn(AndroidSchedulers.mainThread())
+        .subscribe(event -> {
+            // onNext
+        }, throwable -> {
+            // onError
+        }, () -> {
+            // onComplete
+        });
+
+compositeDisposable.add(disposable);
+{% endcodeblock %}
 
 However if I rewrote that code just a little differently:
 
-    disposable =
-        myAwesomeFlowable
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe(new FlowableSubscriber<TextViewTextChangeEvent>() {
-              @Override
-              public void onSubscribe(Subscription subscription) {
-              }
+{% codeblock lang:java linenos:false %}
+disposable =
+    myAwesomeFlowable
+        .observeOn(AndroidSchedulers.mainThread())
+        .subscribe(new FlowableSubscriber<TextViewTextChangeEvent>() {
+            @Override
+            public void onSubscribe(Subscription subscription) {
+            }
 
-              @Override
-              public void onNext(TextViewTextChangeEvent textViewTextChangeEvent) {
-              }
+            @Override
+            public void onNext(TextViewTextChangeEvent textViewTextChangeEvent) {
+            }
 
-              @Override
-              public void onError(Throwable t) {
-              }
+            @Override
+            public void onError(Throwable t) {
+            }
 
-              @Override
-              public void onComplete() {
-              }
-            });
-    // ^ THIS IS WRONG. Won't work        
-    // compositeDisposable.add(disposable);
+            @Override
+            public void onComplete() {
+            }
+        });
+// ^ THIS IS WRONG. Won't work        
+// compositeDisposable.add(disposable);
+{% endcodeblock %}
 
 The above code won't compile. If you want to pass a Subscriber object (like the above `FlowableSubscriber`, `ObservableSource` or an `Observer`) then this strategy won't work. 
 
@@ -158,27 +172,31 @@ A lot of existing RxJava 1 code uses this strategy a lot, so the RxJava maintain
 
 > Due to the Reactive-Streams specification, Publisher.subscribe returns void and the pattern by itself no longer works in 2.0. To remedy this, the method E subscribeWith(E subscriber) has been added to each base reactive class which returns its input subscriber/observer as is. 
 
-    E subscribeWith(E subscriber)
+{% codeblock lang:java linenos:false %}
+E subscribeWith(E subscriber)
+{% endcodeblock %}
 
 If you're still following closely, you'd ask... wait! that doesn't return a Disposable! why the hell is this even remotely more convenient?
 
 Well... it says that the `Subscriber` you pass is sent back to you with `subscribeWith`. But what if your Subscriber itself "implemented" the Disposable interface? If you had a DisposableSubscriber, you could for all practical purposes treat it as a disposable and tack it on to a CompositeDisposable, while still using it as a Subscriber. That's typically the pattern you want to adopt. Here's some code that should make these techniques clear:
 
-    disposable =
-        myAwesomeFlowable
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribeWith(new getDisposableSubscriber<TextViewTextChangeEvent>() {
-                @Override
-                public void onNext(TextViewTextChangeEvent event) {}
+{% codeblock lang:java linenos:false %}
+disposable =
+    myAwesomeFlowable
+        .observeOn(AndroidSchedulers.mainThread())
+        .subscribeWith(new getDisposableSubscriber<TextViewTextChangeEvent>() {
+            @Override
+            public void onNext(TextViewTextChangeEvent event) {}
 
-                @Override
-                public void onError(Throwable e) {}
+            @Override
+            public void onError(Throwable e) {}
 
-                @Override
-                public void onComplete() { }
-            });
-    
-    compositeDisposable.add(disposable);
+            @Override
+            public void onComplete() { }
+        });
+
+compositeDisposable.add(disposable);
+{% endcodeblock %}
 
 Apart from `DisposableSubscriber`, there's also a `ResourceSubscriber` which implements Disposable. There's also a `DefaultSubscriber` which doesn't implement the Disposable interface, so you can't use it with `subscribeWith` (you could use it but you wouldn't get anything "disposable" out of it). 
 

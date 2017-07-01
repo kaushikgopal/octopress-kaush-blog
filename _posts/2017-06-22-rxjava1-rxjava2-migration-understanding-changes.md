@@ -49,19 +49,23 @@ We should probably get one important change out of the way:
 
 Search:
 
-    compile "io.reactivex:rxjava:${rxJavaVersion}"
-    compile "io.reactivex:rxandroid:${rxAndroidVersion}"
-    
-    compile "com.jakewharton.rxbinding:rxbinding:${rxBindingsVersion}"
-    compile "com.squareup.retrofit2:adapter-rxjava:${retrofit2Version}"
+{% codeblock lang:groovy linenos:false %}
+compile "io.reactivex:rxjava:${rxJavaVersion}"
+compile "io.reactivex:rxandroid:${rxAndroidVersion}"
+
+compile "com.jakewharton.rxbinding:rxbinding:${rxBindingsVersion}"
+compile "com.squareup.retrofit2:adapter-rxjava:${retrofit2Version}"
+{% endcodeblock %}
 
 Replace:
 
-     compile "io.reactivex.rxjava2:rxjava:${rxJavaVersion}"
-     compile "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}"
-     
-     compile "com.jakewharton.rxbinding2:rxbinding:${rxBindingsVersion}"
-     compile "com.squareup.retrofit2:adapter-rxjava2:${retrofit2Version}"
+{% codeblock lang:groovy linenos:false %}
+compile "io.reactivex.rxjava2:rxjava:${rxJavaVersion}"
+compile "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}"
+
+compile "com.jakewharton.rxbinding2:rxbinding:${rxBindingsVersion}"
+compile "com.squareup.retrofit2:adapter-rxjava2:${retrofit2Version}"
+{% endcodeblock %}
 
 A minor change in your gradle dependency pull ("2" suffix). 
 
@@ -75,8 +79,10 @@ Another super important change:
 
 # Observable -> Flowable 
 
-    Search : `import rx.Observable;`
-    Replace: `import io.reactivex.Flowable;`
+{% codeblock linenos:false %}
+Search : `import rx.Observable;`
+Replace: `import io.reactivex.Flowable;`
+{% endcodeblock %}
 
 * Flowable is the new Observable. Succinctly - it’s a backpressure-enabled base reactive class.
 * You want to be using Flowable everywhere now, **not** Observable. Use this as your default.
@@ -104,13 +110,15 @@ So if `Publisher` is the Reactive Streams event producer, `Subscriber` is the Re
 
 Looking at the actual interface code declaration should offer more clarity to the above two sections.
 
-    // Reactive Streams spec 
+{% codeblock lang:java linenos:false %}
+// Reactive Streams spec 
 
-    // Flowable implements Publisher
-    
-    interface Publisher<T> {
-        void subscribe(Subscriber<? super T> s);
-    }
+// Flowable implements Publisher
+
+interface Publisher<T> {
+    void subscribe(Subscriber<? super T> s);
+}
+{% endcodeblock %}
 
 As noted before, `Publisher` and `Subscriber` are part of the Reactive Streams spec. Flowable -which is now numero uno base reactive class of choice- implements `Publisher`. All good so far. 
 
@@ -118,26 +126,28 @@ But what about the other base reactive classes like `Observable` and `Single` th
 
 On the publishing side, instead of implementing the standard `Publisher` interface the other event producers implement a "similar" interface.
 
-    // RxJava specific constructs
-    
-    // Observable implements "ObservableSource"
-    interface ObservableSource<T> {
-        void subscribe(Observer<? super T> observer);
-        // notice "Observer" here vs the standard "Subscriber"
-    }
-    
-    // Single implements SingleSource
-    interface SingleSource<T> {
-        void subscribe(SingleObserver<? super T> observer);
-    }
-    
-    interface CompletableSource {
-        void subscribe(CompletableObserver observer);
-    }
-    
-    interface MaybeSource<T> {
-        void subscribe(MaybeObserver<? super T> observer);
-    }
+{% codeblock lang:java linenos:false %}
+// RxJava specific constructs
+
+// Observable implements "ObservableSource"
+interface ObservableSource<T> {
+    void subscribe(Observer<? super T> observer);
+    // notice "Observer" here vs the standard "Subscriber"
+}
+
+// Single implements SingleSource
+interface SingleSource<T> {
+    void subscribe(SingleObserver<? super T> observer);
+}
+
+interface CompletableSource {
+    void subscribe(CompletableObserver observer);
+}
+
+interface MaybeSource<T> {
+    void subscribe(MaybeObserver<? super T> observer);
+}
+{% endcodeblock %}
 
 Notice: instead of having the standard `Subscriber` (Reactive Streams standard) the other base reactive classes (`Observable`, `Single` etc.) now have corresponding "special" Rx specific `Subscriber` or event listeners called "Observer"s.
 
