@@ -9,6 +9,7 @@
 $font-family-base: "Droid Sans", "Source Sans Pro", 'PT Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $header-font-family: "PT Serif", Georgia, Times, "Times New Roman", serif;
 $special-header-font-family: "Droid Sans", "Source Sans Pro", "Varela Round", $header-font-family;
+$fixed-width-font-family: "Droid Mono", "SF Mono", "Menlo", $header-font-family, mono;
 
 $base-font-size:   18px;
 $small-font-size:  $base-font-size * 0.875;
@@ -39,6 +40,7 @@ $on-laptop:        720px;
 $content-width:         720px;
 $page-content-width:    530px;
 $smallest-mobile-width: 350px;
+
 
 // Using media queries with like this:
 // @include media-query($on-mobile) {

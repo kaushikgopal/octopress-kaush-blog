@@ -3,8 +3,8 @@ gems:
   # - octopress-include-tag
   - octopress-littlefoot
   - octopress-gist
-  - octopress-solarized
-  - octopress-codeblock
+  # - octopress-solarized
+  # - octopress-codeblock
   # - octopress-codefence
 
 # Site settings
