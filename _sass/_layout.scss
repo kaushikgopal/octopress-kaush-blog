@@ -149,7 +149,11 @@
     .post-header {
 
         margin-bottom: $spacing-unit/2;
-        float:left;
+        float: left;
+        
+        @include media-query($on-mobile) {
+             float: none;
+        }
 
         .post-title {
             // letter-spacing: -1px;
