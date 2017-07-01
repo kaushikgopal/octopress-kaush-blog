@@ -6,9 +6,9 @@
 
 
 // Our variables
-$font-family-base: "skolar-sans-latin", "Source Sans Pro", 'PT Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$header-font-family: $font-family-base, "PT Serif", Georgia, Times, "Times New Roman", serif;
-$special-header-font-family: "skolar-sans-latin", "Source Sans Pro", "Varela Round", $header-font-family;
+$font-family-base: "Droid Sans", "Source Sans Pro", 'PT Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$header-font-family: "PT Serif", Georgia, Times, "Times New Roman", serif;
+$special-header-font-family: "Droid Sans", "Source Sans Pro", "Varela Round", $header-font-family;
 
 $base-font-size:   18px;
 $small-font-size:  $base-font-size * 0.875;
@@ -23,7 +23,7 @@ $color-link:        #0a63c5;
 $color-contrast:    $color-text;
 $color-divider:     darken(#bbb, 25%);
 
-$background-color: #f3f3f3;
+$background-color: darken(#fff, 3%);
 
 // deprecate below later
 $grey-color:       #efefef; //
@@ -38,7 +38,7 @@ $on-laptop:        720px;
 // Width of the content area
 $content-width:         720px;
 $page-content-width:    530px;
-$smallest-mobile-width: 320px;
+$smallest-mobile-width: 350px;
 
 // Using media queries with like this:
 // @include media-query($on-mobile) {

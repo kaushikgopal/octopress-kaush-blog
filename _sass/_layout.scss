@@ -2,30 +2,30 @@
 ================================================== */
 .site-header {
     font-family: $header-font-family;
-    min-height: 56px;
 
     // Positioning context for the mobile navigation icon
     position: relative;
 
     #banner {
         margin-top : $spacing-unit;
+        color: #7d7d7d;     
 
-        h1 { margin-bottom: 0; }
+        h1 { 
+            margin-bottom: 0; 
+            font-size: 1em;     
+    
+        }
+
         @include media-query($on-mobile) {
             h1 { text-align: center; }
         }
 
         .site-title {
-            color: $color-text;
-            font-weight: bold;
-
-            .blog {
-                color: $color-link;
-            }
+            font-weight: normal;
+            color: #7d7d7d;
 
             &:hover {
               color: $color-link;
-              text-decoration: underline;
             }
 
         }
@@ -144,7 +144,7 @@
 ========================= */
 
 .post {
-    padding-top: $spacing-unit;
+    padding-top: $spacing-unit/2;
 
     .post-header {
 
@@ -153,10 +153,10 @@
 
         .post-title {
             // letter-spacing: -1px;
-            margin-bottom: 0;
+            margin-bottom: $spacing-unit/2;
             font-size: 28px;
-            font-family: $font-family-base;
-            font-weight: bold;
+            font-family: $header-font-family;
+            font-weight: normal;
 
             .article-link  {
               color: $color-text;
@@ -178,13 +178,15 @@
 .post-content {
     clear: left;
     margin-bottom: $spacing-unit;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1.4;
 
     @include media-query($on-mobile) {
-        font-size: 14px;
-        // max-width: $smallest-mobile-width;
+        margin: 0 auto;
+        font-size: 15px;
+        max-width: $smallest-mobile-width;
     }
+
     p {
         margin-bottom: 1.3em;
     }
@@ -195,13 +197,33 @@
         width: 100%;
     }
 
+    h1 {
+        font-family: $header-font-family;
+        font-weight: normal;   
+
+        @include media-query($on-mobile) {
+            font-size: 22px;
+        }
+
+        text-align: center;
+        margin: 1em 0;
+    }
+
     h2 {
-        font-size: 20px;
-        color: $color-link;
+        font-family: $header-font-family;
+        font-weight: normal;  
+
+        @include media-query($on-mobile) {
+            font-size: 18px;
+        }
+
+        margin: 1.9em 0 0.9em 0em;
     }
 
     h3 {
-        font-size: 16px;
+        @include media-query($on-mobile) {
+            font-size: 16px;
+        }
         text-decoration: underline;
     }
 }
