@@ -6,7 +6,6 @@ gem "jekyll"
 group :jekyll_plugins do
     gem 'octopress', '~> 3.0'
     gem "octopress-autoprefixer"
-    gem "octopress-code-highlighter"
     gem "octopress-date-format"
     gem "octopress-deploy"
     gem "octopress-escape-code"

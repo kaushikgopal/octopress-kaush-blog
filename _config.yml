@@ -3,8 +3,8 @@ gems:
   # - octopress-include-tag
   - octopress-littlefoot
   - octopress-gist
-  - octopress-solarized
-  - octopress-codeblock
+  # - octopress-solarized
+  # - octopress-codeblock
   # - octopress-codefence
 
 # Site settings
@@ -15,7 +15,7 @@ description: > # this means to ignore newlines until "baseurl:"
   Curated thoughts on various topics like programming, technology, music, life and personal stuff from Kaushik Gopal.
   Friends call me kaush.
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://blog.kaush.co" # the base hostname & protocol for your site
+url: "https://blog.kaush.co" # the base hostname & protocol for your site
 twitter_username: kaushikgopal
 github_username:  kaushikgopal
 root: /

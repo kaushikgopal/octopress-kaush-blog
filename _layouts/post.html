@@ -5,7 +5,6 @@ layout: default
 
   <header class="post-header">
     <h1 class="post-title">{{ page.title_link }}</h1>
-    <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} [{{ page.author }}]{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
   </header>
 
   <article class="post-content">
@@ -16,5 +15,7 @@ layout: default
     {{ page.permalink }}
     {% endif %}
   </article>
+
+  <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} [{{ page.author }}]{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>  
 
 </div>
