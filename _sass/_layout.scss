@@ -7,8 +7,11 @@
     position: relative;
 
     #banner {
+        font-size: 1.6em;
+        text-align: center;
         margin-top : $spacing-unit;
-        color: #7d7d7d;     
+        margin-bottom : $spacing-unit/3;
+        color: #bfbfbf;     
 
         h1 { 
             margin-bottom: 0; 
@@ -22,7 +25,7 @@
 
         .site-title {
             font-weight: normal;
-            color: #7d7d7d;
+            color: #bfbfbf;
 
             &:hover {
               color: $color-link;
