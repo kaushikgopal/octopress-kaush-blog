@@ -4,6 +4,10 @@ title: Presentations
 permalink: /presentations/
 ---
 
+## 2017
+
+* Jul 14: [(360 AnDev) Rx by example – Volume 3 (the multicast edition)](https://academy.realm.io/posts/360-andev-2017-kaushik-gopal-rxjava-by-example-multicasting/) ([slides](https://speakerdeck.com/kaushikgopal/rx-by-example-volume-3-the-multicast-edition))
+
 ## 2016
 
 * Nov 10: [(Øredev) What I learnt using the Presenter pattern](https://vimeo.com/191068122) [[slides](https://speakerdeck.com/kaushikgopal/what-i-learnt-using-the-presenter-pattern)]
@@ -17,3 +21,4 @@ permalink: /presentations/
 <hr />
 
 * [Fragmented episodes](http://fragmentedpodcast.com/episodes/all/)
+* [Learning Kotlin series](http://fragmentedpodcast.com/category/episodes/learning-kotlin/)
