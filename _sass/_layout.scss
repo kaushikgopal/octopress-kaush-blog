@@ -88,6 +88,15 @@
 
 /* Post metadata section
 ========================= */
+.post-categories {
+    margin: auto;
+    margin-bottom: 1.5em;
+}
+.post-category {
+    text-align: center;
+    color: #bfbfbf;    
+}
+
 
 .post-meta, .post-meta-index {
     @include micro-header;

@@ -1,0 +1,9 @@
+<div class="post-categories">
+  <div class="post-category">
+    {% if post %}
+      {{ post.categories | category_links }}
+    {% else %}
+      {{ page.categories | category_links }}
+    {% endif %}
+  </div>
+</div>
