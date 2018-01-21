@@ -1,7 +1,6 @@
 /* Header
 ================================================== */
 .site-header {
-    font-family: $header-font-family;
 
     // Positioning context for the mobile navigation icon
     position: relative;
@@ -16,7 +15,6 @@
         h1 { 
             margin-bottom: 0; 
             font-size: 1em;     
-    
         }
 
         @include media-query($on-mobile) {
@@ -24,6 +22,7 @@
         }
 
         .site-title {
+            font-family: $font-family-base;
             font-weight: normal;
             color: #bfbfbf;
 
@@ -94,9 +93,10 @@
 }
 .post-category {
     text-align: center;
-    color: #bfbfbf;    
+    color: #e3e3e3;
+    font-size: 1.4em;
+    font-family: $header-font-family;
 }
-
 
 .post-meta, .post-meta-index {
     @include micro-header;
@@ -129,7 +129,9 @@
 .post-meta {
     margin-top: 0;
     padding: 0;
-    text-align: left;
+    text-align: center;
+    text-transform: none;
+    color: $grey-color-dark;
 }
 
 @include media-query($on-tablet) {
@@ -160,8 +162,8 @@
 
     .post-header {
 
-        margin-bottom: $spacing-unit/2;
-        float: left;
+        margin-bottom: $spacing-unit;
+        // float: left;
         
         @include media-query($on-mobile) {
              float: none;
@@ -169,13 +171,14 @@
 
         .post-title {
             // letter-spacing: -1px;
+            
             margin-bottom: $spacing-unit/2;
             font-size: 28px;
-            font-family: $header-font-family;
-            font-weight: normal;
+            text-align: center;
 
             .article-link  {
-              color: $color-text;
+              color: lighten($color-text, 22%);
+
               &:hover {
                 color: $color-link;
                 text-decoration: underline;
@@ -183,7 +186,6 @@
             }
 
             @include media-query($on-mobile) {
-                text-align: center;
                 font-size: 22px;
             }
         }
@@ -214,32 +216,38 @@
     }
 
     h1 {
-        font-family: $header-font-family;
-        font-weight: normal;   
+        font-size: 1.2em;
 
         @include media-query($on-mobile) {
             font-size: $small-font-size + 4px;
         }
 
+        color: lighten($color-text, 18%);
         text-align: center;
-        margin: 1em 0;
+        margin: 1.8em 0;
     }
 
     h2 {
-        font-family: $header-font-family;
-        font-weight: normal;  
+        font-size: 1em;
 
         @include media-query($on-mobile) {
             font-size: $small-font-size + 2px;
         }
-
+        
+        color: lighten($color-text, 18%);
+        // font-weight: 400;
         margin: 1.9em 0 0.9em 0em;
     }
 
     h3 {
+        font-size: 0.8em;
+
         @include media-query($on-mobile) {
             font-size: $small-font-size;
         }
+        
+        color: lighten($color-text, 18%);
+        // font-weight: 400;
         text-decoration: underline;
     }
 }
