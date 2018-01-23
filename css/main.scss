@@ -7,8 +7,8 @@
 
 // Our variables
 $font-family-base: "PT Serif", Georgia, Times, "Times New Roman", serif;
-$header-font-family: Helvetica, Arial, sans-serif;
-$special-header-font-family: "Droid Sans", "Source Sans Pro", 'PT Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$header-font-family: -apple-system, BlinkMacSystemFont, 'SF UI Text', Helvetica, Arial, sans-serif;
+$special-header-font-family: -apple-system, BlinkMacSystemFont, 'SF UI Text', "Droid Sans", "Source Sans Pro", 'PT Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $fixed-width-font-family: "Droid Mono", "SF Mono", "Menlo", $header-font-family, mono;
 
 $base-font-size:   20px;
@@ -56,7 +56,7 @@ $smallest-mobile-width: 350px;
 }
 @mixin micro-header {
     text-transform: uppercase;
-    font-family: $header-font-family;
+    font-family: $special-header-font-family;
 }
 
 // Import partials from `sass_dir` (defaults to `_sass`)

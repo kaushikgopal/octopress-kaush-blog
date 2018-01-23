@@ -2,6 +2,10 @@
 ================================================== */
 .site-header {
 
+    .wrapper {
+        border-bottom: 1px solid #bfbfbf;
+    }
+
     // Positioning context for the mobile navigation icon
     position: relative;
 
@@ -14,7 +18,8 @@
 
         h1 { 
             margin-bottom: 0; 
-            font-size: 1em;     
+            font-size: 0.8em;
+            text-align: left;
         }
 
         @include media-query($on-mobile) {
@@ -93,9 +98,9 @@
 }
 .post-category {
     text-align: center;
-    color: #e3e3e3;
+    color: #bfbfbf;
     font-size: 1.4em;
-    font-family: $header-font-family;
+    font-family: $font-family-base;
 }
 
 .post-meta, .post-meta-index {
@@ -173,7 +178,7 @@
             // letter-spacing: -1px;
             
             margin-bottom: $spacing-unit/2;
-            font-size: 28px;
+            font-size: 32px;
             text-align: center;
 
             .article-link  {
@@ -203,6 +208,11 @@
         margin: 0 auto;
         font-size: $small-font-size;
         max-width: $smallest-mobile-width;
+    }
+
+    p:first-child {
+        font-size: $base-font-size * 1.1;
+        margin: 3em 1em;
     }
 
     p {
@@ -357,6 +367,7 @@ pre {
 .site-footer {
     border-top: 1px solid $color-divider;
     padding: $spacing-unit 0;
+    margin-top: 2em;
 }
 
 .site-footer fieldset {
