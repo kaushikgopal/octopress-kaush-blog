@@ -2,11 +2,44 @@
 layout: default
 ---
 
-<!-- <div class="home"> -->
 
-<!-- <h1 class="page-heading">Posts</h1> -->
+{% for post in site.posts  %}
+    {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
+    {% capture next_year %}{{ post.previous.date | date: "%Y" }}{% endcapture %}
 
-<table class="post-list">
+    {% if forloop.first %}
+    <h2 class="post-list-year-header" id="{{ this_year }}-ref">{{this_year}}</h2>
+    <ul class="post-list-year-content">
+    {% endif %}
+        <li class="post-link">
+          <div class="post-link-date">
+            {{ post.date | date: "%b %-d" }}
+          </div>
+          <a class="post-link-url" href="{{ post.url | prepend: site.baseurl }}">
+            {% if post.linkpost %}
+                {{ post.title | truncate: 40 }}
+            {% else %}
+                {{ post.title | truncate: 45 }}
+            {% endif %}
+            </a>
+          {% if post.linkpost %}<a class="linklog" href="{{ post.title_url }}">{{ site.linkpost.marker }}</a>{% endif %}
+        </li>
+
+    {% if forloop.last %}
+    </ul>
+    {% else %}
+        {% if this_year != next_year %}
+    </ul>
+
+    <h2 class="post-list-year-header" id="{{ next_year }}-ref">{{next_year}}</h2>
+
+    <ul class="post-list-year-content">
+        {% endif %}
+    {% endif %}
+{% endfor %}
+
+
+<!-- <table class="post-list">
   {% for post in site.posts %}
   <tr>
     <td class="post-meta-index">
@@ -20,24 +53,9 @@ layout: default
             {{ post.title | truncate: 45 }}
         {% endif %}
         </a>
-      {% if post.linkpost %}<a class="linklog" href="{{ post.title_url }}">[link {{ site.linkpost.marker }}]</a>{% endif %}
+      {% if post.linkpost %}<a class="linklog" href="{{ post.title_url }}">{{ site.linkpost.marker }}</a>{% endif %}
     </td>
   </tr>
   {% endfor %}
 </table>
-
-<!--   <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-        <h2 class="post-link">
-            <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title | truncate: 30 }}</a>
-            {% if post.linkpost %}<a class="linklog" href="{{ post.title_link }}">[link {{ site.linkpost.marker }}]</a>{% endif %}
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
--->
-<!-- <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p> -->
-
-<!-- </div> -->
+ -->

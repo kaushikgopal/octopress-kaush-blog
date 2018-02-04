@@ -70,28 +70,14 @@
 }
 
 .page-content-wrapper {
-
     @include media-query($on-mobile) {
         min-width: $smallest-mobile-width;
-    }
-
-    table.post-list {
-        float: left;
-        margin: 0;
-        list-style: none;
-
-        @include media-query($on-mobile) {
-            width: 100%;
-        }
-
-        > li {
-            clear: both;
-        }
     }
 }
 
 /* Post metadata section
 ========================= */
+
 .post-categories {
     margin: auto;
     margin-bottom: 1.5em;
@@ -158,6 +144,46 @@
     }
 }
 
+/* Landing posts grouped by year
+=============================== */
+
+    h2.post-list-year-header {
+        clear: left;
+        color: lighten($color-text, 22%);
+    }
+    h2.post-list-year-header:first-child { 
+        margin-top: $spacing-unit;
+    }
+
+    ul.post-list-year-content {
+        
+        float: left;
+        margin: 0 0 $spacing-unit 0;
+        list-style: none;
+        @include media-query($on-mobile) {
+            width: 100%;
+        }
+
+        .post-link {
+
+            margin: 0.1em 0;
+
+            .post-link-date {
+                float: left;
+                font-family: $header-font-family;
+                color: lighten($color-text, 22%);
+                width: 64px;
+                text-align: right;
+                margin-right: 10px;
+            }
+
+            a.post-link-url {
+                float: left;
+                display: block;
+            }
+        }
+
+    }
 
 /* Post content section
 ========================= */
