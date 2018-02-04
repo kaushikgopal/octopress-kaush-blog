@@ -11,7 +11,7 @@ $header-font-family: -apple-system, BlinkMacSystemFont, 'SF UI Text', Helvetica,
 $special-header-font-family: -apple-system, BlinkMacSystemFont, 'SF UI Text', "Droid Sans", "Source Sans Pro", 'PT Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $fixed-width-font-family: "Droid Mono", "SF Mono", "Menlo", $header-font-family, mono;
 
-$base-font-size:   20px;
+$base-font-size:   18px;
 $small-font-size:  $base-font-size * 0.875;
 $base-line-height: 1.4;
 
@@ -20,7 +20,7 @@ $spacing-unit:          30px;
 $spacing-micro-unit:    6px;
 
 $color-text:        #111;
-$color-link:        #5c9cf5;
+$color-link:        #5594ec;
 $color-contrast:    $color-text;
 $color-divider:     darken(#bbb, 25%);
 

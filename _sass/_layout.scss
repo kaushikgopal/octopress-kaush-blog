@@ -202,7 +202,7 @@
     clear: left;
     margin-bottom: $spacing-unit;
     font-size: $base-font-size;
-    line-height: 1.4;
+    line-height: 1.618;
 
     @include media-query($on-mobile) {
         margin: 0 auto;
@@ -212,11 +212,11 @@
 
     p:first-child {
         // font-size: $base-font-size * 1.1;
-        margin: 3em 0em;
+        // margin: 3em 0em;
     }
 
     p {
-        margin-bottom: 1.3em;
+        margin-bottom: $spacing-unit;
     }
 
     hr {
