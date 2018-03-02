@@ -89,18 +89,26 @@
     font-family: $font-family-base;
 }
 
-.post-meta, .post-meta-index {
+.post-meta {
     @include micro-header;
     margin-top: $spacing-micro-unit;
     padding: 2px 4px 0 0;
     font-size: 0.65em;
     text-align: right;
+
+    margin-top: 0;
+    padding: 0;
+    text-align: center;
+    text-transform: none;
+    color: $grey-color-dark;
 }
 
-.post-link, .post-link-index {
+.post-link {
     display: block;
     font-size: 18px;
     font-family: $font-family-base;
+    float: left;
+    width: 100%;
 
     .linklog {
         color: $color-contrast;
@@ -110,41 +118,7 @@
     }
 }
 
-// styles that are different between table index and independent posts
-
-.post-meta, .post-link {
-    float: left;
-    width: 100%;
-}
-
-.post-meta {
-    margin-top: 0;
-    padding: 0;
-    text-align: center;
-    text-transform: none;
-    color: $grey-color-dark;
-}
-
-@include media-query($on-tablet) {
-    .post-link-index {
-        font-size: 16px;
-    }
-}
-
-@include media-query($on-mobile) {
-    .post-meta-index {
-        font-size: 0.45em;
-        width: 19.6%;
-    }
-    .post-link-index {
-        font-size: 0.65em;
-    }
-    .post-meta {
-        text-align: center
-    }
-}
-
-/* Landing posts grouped by year
+/* Landing posts - grouped by year
 =============================== */
 
     h2.post-list-year-header {
@@ -160,30 +134,38 @@
         float: left;
         margin: 0 0 $spacing-unit 0;
         list-style: none;
-        @include media-query($on-mobile) {
-            width: 100%;
-        }
+        width: 97%;
+
+        @include media-query($on-mobile) { width: 100%; }
 
         .post-link {
-
             margin: 0.1em 0;
 
             .post-link-date {
                 float: left;
                 font-family: $header-font-family;
                 color: lighten($color-text, 22%);
-                width: 64px;
                 text-align: right;
                 margin-right: 10px;
+                width: 15%;
+                
+                @include media-query($on-mobile) {
+                    font-size: 16px;
+                }
             }
-
+            
             a.post-link-url {
                 float: left;
                 display: block;
+                width: 75%;
+
+                @include media-query($on-mobile) {
+                    font-size: 16px;
+                }
             }
         }
-
     }
+
 
 /* Post content section
 ========================= */
@@ -288,6 +270,15 @@
     }
 }
 
+
+figure { text-align: center; }
+figcaption { 
+    font-size: 0.8em;
+    font-family: $special-header-font-family;
+    text-align: center; 
+    margin-bottom: $spacing-unit;
+    margin-top: -1 * $spacing-unit / 2;
+}
 
 /**
  * Blockquotes

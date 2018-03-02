@@ -17,9 +17,9 @@ layout: default
           </div>
           <a class="post-link-url" href="{{ post.url | prepend: site.baseurl }}">
             {% if post.linkpost %}
-                {{ post.title | truncate: 40 }}
+                {{ post.title }}
             {% else %}
-                {{ post.title | truncate: 45 }}
+                {{ post.title }}
             {% endif %}
             </a>
           {% if post.linkpost %}<a class="linklog" href="{{ post.title_url }}">{{ site.linkpost.marker }}</a>{% endif %}
@@ -37,25 +37,3 @@ layout: default
         {% endif %}
     {% endif %}
 {% endfor %}
-
-
-<!-- <table class="post-list">
-  {% for post in site.posts %}
-  <tr>
-    <td class="post-meta-index">
-      {{ post.date | date: "%b %-d, %Y" }}
-    </td>
-    <td class="post-link-index">
-      <a href="{{ post.url | prepend: site.baseurl }}">
-        {% if post.linkpost %}
-            {{ post.title | truncate: 40 }}
-        {% else %}
-            {{ post.title | truncate: 45 }}
-        {% endif %}
-        </a>
-      {% if post.linkpost %}<a class="linklog" href="{{ post.title_url }}">{{ site.linkpost.marker }}</a>{% endif %}
-    </td>
-  </tr>
-  {% endfor %}
-</table>
- -->
