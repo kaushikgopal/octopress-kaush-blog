@@ -3,13 +3,14 @@
 ---
 @charset "utf-8";
 
-
+$font-prefix: './custom/path/to/font/files';
+@import '../node_modules/@ibm/plex/scss/ibm-plex.scss';
 
 // Our variables
-$font-family-base: "PT Serif", Georgia, Times, "Times New Roman", serif;
-$header-font-family: -apple-system, BlinkMacSystemFont, 'SF UI Text', Helvetica, Arial, sans-serif;
-$special-header-font-family: -apple-system, BlinkMacSystemFont, 'SF UI Text', "Droid Sans", "Source Sans Pro", 'PT Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$fixed-width-font-family: "Droid Mono", "SF Mono", "Menlo", $header-font-family, mono;
+$font-family-base: 'IBM Plex Serif', 'PT Serif', Georgia, Times, "Times New Roman", serif;
+$header-font-family: 'IBM Plex Sans', 'SF UI Text', Helvetica, Arial, sans-serif;
+$special-header-font-family: 'IBM Plex Sans', 'SF UI Text', "Droid Sans", "Source Sans Pro", 'PT Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$fixed-width-font-family: 'IBM Plex Mono', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', Courier, monospace;
 
 $base-font-size:   18px;
 $small-font-size:  $base-font-size * 0.875;
