@@ -3,7 +3,7 @@
 ---
 @charset "utf-8";
 
-$font-prefix: './custom/path/to/font/files';
+$font-prefix: '../node_modules/@ibm/plex';
 @import '../node_modules/@ibm/plex/scss/ibm-plex.scss';
 
 // Our variables
