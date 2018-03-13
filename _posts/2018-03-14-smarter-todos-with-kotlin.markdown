@@ -5,6 +5,8 @@ date: 2018-03-14T08:30:00-08:00
 external-url: https://tech.instacart.com/smarter-todos-with-kotlin-beb522fe9a01
 ---
 
+Checkout this quick blog post I wrote for my company, tweaking the existing Kotlin TODO to work towards our requirements.
+
 While I don't think this solution is a panacea for all your missing code snippets, I have found some luck with this method, in adding accountability for those PR review feedback comments you say you'll get to, but conveniently forget :)
 
 Here's a bonus if you're reading this article from here:
@@ -37,5 +39,5 @@ Here's a bonus if you're reading this article from here:
     }
 
 
-It’s a pretty straightforward date builder with minor tweaks (for e.g. 3 = March cause what are we ? Monsters ?!).
+It’s a pretty straightforward date builder with minor tweaks (for e.g. 3 = March cause what are we, Monsters ?).
 
