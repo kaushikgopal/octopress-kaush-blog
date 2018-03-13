@@ -337,26 +337,21 @@ blockquote {
 /* Code snippets
 ================================================== */
 
-code {
-    font-size: $base-font-size * 0.8 !important;    
-    font-family: $fixed-width-font-family !important;
-    background-color: #eef;
-
-    @include media-query($on-mobile) {
-        font-size: $small-font-size * 0.8 !important;
-    }
-}
-
-pre {
-    // font-family: $fixed-width-font-family;
-    // background-color: #eef;
-    padding: 8px 12px;
+article.post-content pre {
+    
     white-space: pre-wrap;
+    background-color: #f5f5f5;    
 
     > code {
+        font-family: $fixed-width-font-family !important;
+    
         border: 0;
         padding-right: 0;
         padding-left: 0;
+
+        @include media-query($on-mobile) {
+            font-size: $small-font-size * 0.8;
+        }
     }
 }
 /*
