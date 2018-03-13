@@ -124,6 +124,11 @@
     h2.post-list-year-header {
         clear: left;
         color: lighten($color-text, 22%);
+        margin-left: 1.1em;
+        @include media-query($on-mobile) { 
+            margin-left: 0em;
+            text-align: center; 
+        }
     }
     h2.post-list-year-header:first-child { 
         margin-top: $spacing-unit;
@@ -147,7 +152,7 @@
                 color: lighten($color-text, 22%);
                 text-align: right;
                 margin-right: 10px;
-                width: 15%;
+                width: 16%;
                 
                 @include media-query($on-mobile) {
                     font-size: 16px;
