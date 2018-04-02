@@ -210,7 +210,7 @@ There's no longer an `unsubscribe` call on CompositeDisposable. It's been rename
 
 ## What's the difference? 
 
-unsubscribe/dispose [terminates even future subscriptions while clear doesn't](https://github.com/kaushikgopal/RxJava-Android-Samples/commit/1e7d4b2f867a97b32a0cde81cb488c3d17d4952f) allowing you to reuse the CompositeDisposable.
+unsubscribe/dispose [terminates even future subscriptions while clear doesn't](https://github.com/kaushikgopal/RxJava-Android-Samples/commit/1e7d4b2f867a97b32a0cde81cb488c3d17d4952f) allow you to reuse the CompositeDisposable.
 
 In the next and final part, we'll look at some of the miscellaneous changes.
 
