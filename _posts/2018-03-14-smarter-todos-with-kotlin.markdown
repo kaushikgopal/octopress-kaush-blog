@@ -11,33 +11,34 @@ While I don't think this solution is a panacea for all your missing code snippet
 
 Here's a bonus if you're reading this article from here:
 
-    /**
-     * @param month - regular month (so 3 = March)
-     */
-    @JvmOverloads
-    fun ISDate(
-        day: Int? = null,
-        month: Int? = null,
-        year: Int? = null,
-        hour: Int? = null,
-        minute: Int? = null,
-        second: Int? = null,
-        date: Date? = null
-    ): Date = Date().apply {
+{% codeblock lang:kotlin linenos:false %}
+/**
+ * @param month - regular month (so 3 = March)
+ */
+@JvmOverloads
+fun ISDate(
+    day: Int? = null,
+    month: Int? = null,
+    year: Int? = null,
+    hour: Int? = null,
+    minute: Int? = null,
+    second: Int? = null,
+    date: Date? = null
+): Date = Date().apply {
 
-        val cal = Calendar.getInstance()
+    val cal = Calendar.getInstance()
 
-        date?.let { cal.time = it }
-        day?.let { cal.set(Calendar.DAY_OF_MONTH, it) }
-        month?.let { cal.set(Calendar.MONTH, it - 1) }
-        year?.let { cal.set(Calendar.YEAR, it) }
-        hour?.let { cal.set(Calendar.HOUR_OF_DAY, it) }
-        minute?.let { cal.set(Calendar.MINUTE, it) }
-        second?.let { cal.set(Calendar.SECOND, it) }
+    date?.let { cal.time = it }
+    day?.let { cal.set(Calendar.DAY_OF_MONTH, it) }
+    month?.let { cal.set(Calendar.MONTH, it - 1) }
+    year?.let { cal.set(Calendar.YEAR, it) }
+    hour?.let { cal.set(Calendar.HOUR_OF_DAY, it) }
+    minute?.let { cal.set(Calendar.MINUTE, it) }
+    second?.let { cal.set(Calendar.SECOND, it) }
 
-        return cal.time
-    }
-
+    return cal.time
+}
+{% endcodeblock %}
 
 It’s a pretty straightforward date builder with minor tweaks (for e.g. 3 = March cause what are we, Monsters ?).
 
