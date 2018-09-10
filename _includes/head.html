@@ -9,7 +9,14 @@
   <link href="https://fonts.googleapis.com/css?family=Droid+Sans|PT+Serif" rel="stylesheet">
   
   <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  
+  {% if page.canonical-url == nil %}
+  {% capture canonical %}{{ site.url }}{% if site.permalink contains '.html' %}{{ page.url }}{% else %}{{ page.url | remove:'index.html' | strip_slash }}{% endif %}{% endcapture %}
+  {% else %}
+  {% assign canonical = page.canonical-url %}
+  {% endif %}
+  <link rel="canonical" href="{{ canonical }}">
+  
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
   <link rel="shortcut icon" href="https://kaush.co/favicon.ico">
   {% include google_analytics.html %}
