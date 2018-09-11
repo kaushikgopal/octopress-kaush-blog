@@ -6,10 +6,15 @@ canonical-url: https://tech.instacart.com/free-hackathon-vote-tabulation-using-g
 ---
 
 We recently held our semi-annual hackathon at Instacart - the Carrot Wars 2018!
+
 In putting this hackathon together, I noticed a pretty blaring gap - there wasn't a simple (and free) online service that would quickly tabulate the results for a hackathon event. We looked around and found some nifty options, but most of them were a tad bit too expensive for our liking. They also were not setup for a single event use or required a monthly subscription. There other usage restrictions, too - max vote count, concurrent user count, etc.
+
 You'd think there would be at least some option out there, given how popular hackathons are these days. We did some cursory searching but couldn't find something that would work for us.
+
 My co-organizer , admittedly wiser about such things, made it super clear to me, "No KG, we ARE NOT building our own hackathon voting website 2 days before the event! You have more important things to do!". So I set out to do exactly (½ of) just that.
+
 If you're on a time crunch and just want to use this post for a hackathon you're about to run, jump to the "How to use this form for your hackathon" section below.
+
 For the juicy details, please continue reading!
 
 <!-- more -->
@@ -61,6 +66,7 @@ curl -s "https://get.sdkman.io" | bash
 sdk install maven
 sdk install kotlin
 sdk install kscript
+
 # alternatively with homebrew
 brew install maven
 brew install holgerbrandl/tap/kscript
@@ -118,4 +124,4 @@ __Haters hate all you want, but those are my movie choices!__.
 
 ------------------------------
 
-_Originally posted this article on the Instacart tech blog. Reproduced here for posterity._
+_Originally posted this article on the [Instacart tech blog](https://tech.instacart.com/free-hackathon-vote-tabulation-using-google-forms-kotlin-3c7b7080ea). Reproduced here for posterity._
