@@ -4,9 +4,14 @@ title: Presentations
 permalink: /presentations/
 ---
 
+## 2018
+
+* Sep 28: ([MBLT Dev 2018](https://mbltdev.ru/en)) Unidirectional State Flow patterns – a refactoring story [[slides](https://speakerdeck.com/kaushikgopal/unidirectional-state-flow-patterns-a-refactoring-story)]
+* May 7: ([Microsoft Build 2018](https://www.microsoft.com/en-us/build)) - Supercharging your workflow with App Center and Azure
+
 ## 2017
 
-* Jul 14: [(360 AnDev) Rx by example – Volume 3 (the multicast edition)](https://academy.realm.io/posts/360-andev-2017-kaushik-gopal-rxjava-by-example-multicasting/) ([slides](https://speakerdeck.com/kaushikgopal/rx-by-example-volume-3-the-multicast-edition))
+* Jul 14: [(360 AnDev) Rx by example – Volume 3 (the multicast edition)](https://academy.realm.io/posts/360-andev-2017-kaushik-gopal-rxjava-by-example-multicasting/) [[slides](https://speakerdeck.com/kaushikgopal/rx-by-example-volume-3-the-multicast-edition)]
 
 ## 2016
 
